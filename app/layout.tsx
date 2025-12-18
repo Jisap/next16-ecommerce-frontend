@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Audiowide, Golos_Text } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "./components/Navbar/Navbar";
 
 const audiowide = Audiowide({
   weight: ["400"],
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${audiowide.variable} ${golostext.variable} ${lufga.variable}`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

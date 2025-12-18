@@ -2,40 +2,73 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "remixicon/fonts/remixicon.css";
 
-
+/* =========================
+   Variables base (CSS)
+   ========================= */
 :root {
-  --prim: #FEEB9d;
-  --prim-light: #fdfbf0;
+  /* Colores */
+  --prim: #FEEB9D;
+  --prim-light: #FDFBF0;
   --second: #CC0D39;
-  --white: #fff;
-  --black: #000;
+  --white: #FFFFFF;
+  --black: #000000;
 
-  --gradiente: linear-gradient(307deg, #FFEA96 1.9%, #FFB0B0 85.96%);
+  /* Gradientes */
+  --gradient-main: linear-gradient(307deg, #FFEA96 1.9%, #FFB0B0 85.96%);
 
-  --GolosText: "Golos Text", sans-serif;
-  --Audiowide: "Audiowide", sans-serif;
-  --Lufga: var(--font-lufga);
+  /* Tipografías */
+  --font-golos: "Golos Text", sans-serif;
+  --font-audiowide: "Audiowide", sans-serif;
+  --font-lufga: var(--font-lufga);
 
-  --transition-regular: .3s;
-  --transition-slow: .6s;
+  /* Transiciones */
+  --transition-fast: 0.3s;
+  --transition-slow: 0.6s;
 }
 
-@theme inline {}
+/* =========================
+   Tailwind Theme Tokens
+   ========================= */
+@theme {
+  /* Colores */
+  --color-primary: var(--prim);
+  --color-primary-light: var(--prim-light);
+  --color-secondary: var(--second);
+  --color-white: var(--white);
+  --color-black: var(--black);
 
+  /* Gradientes */
+  --background-image-primary: var(--gradient-main);
 
+  /* Tipografías */
+  --font-family-golos: var(--font-golos);
+  --font-family-audiowide: var(--font-audiowide);
+  --font-family-lufga: var(--font-lufga);
+
+  /* Transiciones */
+  --transition-duration-fast: var(--transition-fast);
+  --transition-duration-slow: var(--transition-slow);
+}
+
+/* =========================
+   Clases utilitarias extra
+   ========================= */
 .GolosText {
-  font-family: var(--GolosText);
+  font-family: var(--font-golos);
 }
 
 .Audiowide {
-  font-family: var(--Audiowide);
+  font-family: var(--font-audiowide);
 }
 
 .Lufga {
-  font-family: var(--Lufga) sans-serif;
+  font-family: var(--font-lufga), sans-serif;
 }
 
+/* =========================
+   Base
+   ========================= */
 body {
   background-color: #FFFAF3;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
 }

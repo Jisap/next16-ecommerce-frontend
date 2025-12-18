@@ -1,8 +1,15 @@
+"use client"
+
+import MiddleNav from "./MiddleNav"
 
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <header className="w-full">
+      <div className="hidden lg:block">
+        <MiddleNav />
+      </div>
+    </header>
   )
 }
 
