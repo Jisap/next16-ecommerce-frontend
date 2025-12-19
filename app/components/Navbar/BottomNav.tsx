@@ -170,7 +170,7 @@ const BottomNav = () => {
 
         {/* Mobile menu button */}
         <div className="lg:hidden flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 md:hidden">
             <Link href="/UI-components/Pages/Wishlist" className="relative">
               <i className="bi bi-balloon-heart text-3xl"></i>
             </Link>
