@@ -1,0 +1,133 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import menuDot from "@/public/assets/Menu-dot.svg"
+import { useEffect, useState } from "react"
+
+type NavLink = {
+  href: string;
+  label: string;
+  dropdown?: { label: string; href: string }[];
+}
+
+const navLinks: NavLink[] = [
+  { label: "Home", href: "/" },
+  {
+    label: "Shop",
+    href: "/UI-Components/Shop",
+    dropdown: [
+      { label: "Shop", href: "/UI-Components/Shop" },
+      { label: "Details", href: "/UI-Components/Shop/123" },
+      { label: "Cart", href: "/UI-Components/Pages/Cart" },
+      { label: "Whishlist", href: "/UI-Components/Pages/Whishlist" },
+      { label: "Checkout", href: "/UI-Components/Pages/Checkout" },
+    ]
+  },
+]
+
+const BottomNav = () => {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<Record<string, boolean>>({});
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  const toggleDropdown = (label: string) => {
+    setOpenDropdown((prev) => ({
+      ...Object.fromEntries(                         // Reconstruye un objeto apartir de la lista que obtiene en Object.keys(prev)
+        Object.keys(prev).map((key) => [key, false]) // Obtiene todas las llaves y las establece en false
+      ),
+      [label]: !prev[label],                         // Cambia el valor de la llave que se le pasa
+    }))
+  }
+
+  return (
+    <div className={`
+      w-full bg-white shadow-sm transition-all py-5 duration-500
+      ${isFixed ? "fixed top-0 left-0 right-0 z-50 fixed-nav" : ""}
+    `}
+    >
+      <div className="w-full flex items-center justify-between px-[8%] lg:px-[16%] text-gray-700">
+        {/* Destktop logo */}
+        <Link
+          href="/"
+          className={`
+            text-4xl lg:text-5xl font-bold Audiowide text-black hidden
+            ${isFixed ? "lg:flex" : "hidden"}
+          `}
+        >
+          Fashi<span className="text-secondary">Que</span>
+        </Link>
+
+        {/* Mobile menu */}
+        <Link
+          href="/"
+          className="text-4xl lg:text-5xl font-bold Audiowide text-black block lg:hidden"
+        >
+          Fashi<span className="text-secondary">Que</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex space-x-6 menu-link relative z-40">
+          {navLinks.map((link) => (
+            link.dropdown ? (
+              <div key={link.label} className="relative group">
+                <Link href={link.href} className="flex GolosText items-center gap-1">
+                  {link.label}
+                  <Image
+                    src={menuDot}
+                    alt="Menu Dot"
+                  />
+                </Link>
+
+                <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl p-2 border border-gray-100 rounded-lg min-w-[170px]">
+                  {link.dropdown.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="block px-4 py-2 rounded-md transition-all"
+                    >
+                      <div className="flex gap-1">
+                        <Image
+                          src={menuDot}
+                          alt="Menu Dot"
+                        />
+                        <span>{item.label}</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link key={link.label} href={link.href} className="flex gap-2 GolosText">
+                {link.label}
+                <Image
+                  src={menuDot}
+                  alt="Menu Dot"
+                />
+              </Link>
+            )
+          ))}
+        </nav>
+
+        {/* Right Icons */}
+      </div>
+    </div>
+  )
+}
+
+export default BottomNav

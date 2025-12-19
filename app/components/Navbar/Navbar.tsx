@@ -1,7 +1,7 @@
 "use client"
 
 import MiddleNav from "./MiddleNav"
-
+import BottomNav from "./BottomNav"
 
 const Navbar = () => {
   return (
@@ -9,6 +9,7 @@ const Navbar = () => {
       <div className="hidden lg:block">
         <MiddleNav />
       </div>
+      <BottomNav />
     </header>
   )
 }
