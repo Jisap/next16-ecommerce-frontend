@@ -85,12 +85,12 @@ const BottomNav = () => {
       ${isFixed ? "fixed top-0 left-0 right-0 z-50 fixed-nav" : ""}
     `}
     >
-      <div className="w-full flex items-center justify-between px-[8%] lg:px-[16%] text-gray-700">
+      <div className="w-full flex items-center justify-between px-[4%] md:px-[8%] lg:px-[5%] xl:px-[10%] 2xl:px-[16%] text-gray-700">
         {/* Destktop logo */}
         <Link
           href="/"
           className={`
-            text-4xl lg:text-5xl font-bold Audiowide text-black hidden
+            text-4xl lg:text-3xl xl:text-5xl font-bold Audiowide text-black hidden
             ${isFixed ? "lg:flex" : "hidden"}
           `}
         >
@@ -106,11 +106,11 @@ const BottomNav = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex space-x-6 menu-link relative z-40">
+        <nav className="hidden lg:flex lg:space-x-1 xl:space-x-4 2xl:space-x-6 menu-link relative z-40">
           {navLinks.map((link) => (
             link.dropdown ? (
               <div key={link.label} className="relative group">
-                <Link href={link.href} className="flex GolosText items-center gap-1">
+                <Link href={link.href} className="flex GolosText items-center gap-1 lg:text-sm xl:text-base">
                   {link.label}
                   <Image
                     src={menuDot}
@@ -137,7 +137,7 @@ const BottomNav = () => {
                 </div>
               </div>
             ) : (
-              <Link key={link.label} href={link.href} className="flex gap-2 GolosText">
+              <Link key={link.label} href={link.href} className="flex gap-2 GolosText lg:text-sm xl:text-base">
                 {link.label}
                 <Image
                   src={menuDot}
@@ -149,10 +149,10 @@ const BottomNav = () => {
         </nav>
 
         {/* Right Icons */}
-        <div className="md:flex items-center gap-5 hidden">
+        <div className="lg:flex items-center gap-3 xl:gap-5 hidden">
           <Link
             href="/UI-components/Pages/Login"
-            className="login-link border-b border-gray-400 GolosText font-semibold"
+            className="login-link border-b border-gray-400 GolosText font-semibold hidden xl:block"
           >
             Login / Register
           </Link>
@@ -170,7 +170,7 @@ const BottomNav = () => {
 
         {/* Mobile menu button */}
         <div className="lg:hidden flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-4">
             <Link href="/UI-components/Pages/Wishlist" className="relative">
               <i className="bi bi-balloon-heart text-3xl"></i>
             </Link>
