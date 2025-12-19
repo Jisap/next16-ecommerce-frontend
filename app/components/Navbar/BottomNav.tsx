@@ -149,7 +149,7 @@ const BottomNav = () => {
         </nav>
 
         {/* Right Icons */}
-        <div className="flex items-center gap-5">
+        <div className="md:flex items-center gap-5 hidden">
           <Link
             href="/UI-components/Pages/Login"
             className="login-link border-b border-gray-400 GolosText font-semibold"
@@ -170,6 +170,16 @@ const BottomNav = () => {
 
         {/* Mobile menu button */}
         <div className="lg:hidden flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <Link href="/UI-components/Pages/Wishlist" className="relative">
+              <i className="bi bi-balloon-heart text-3xl"></i>
+            </Link>
+
+            <Link href="/UI-components/Pages/Cart" className="relative">
+              <i className="bi bi-cart3 text-3xl"></i>
+            </Link>
+          </div>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-2xl focus:outline-none"
