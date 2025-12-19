@@ -24,6 +24,30 @@ const navLinks: NavLink[] = [
       { label: "Checkout", href: "/UI-Components/Pages/Checkout" },
     ]
   },
+  {
+    label: "Blog",
+    href: "/UI-Components/Blog",
+    dropdown: [
+      { label: "Blog", href: "/UI-Components/Blogs" },
+      { label: "Blog Details", href: "/UI-Components/Blog/7" },
+    ]
+  },
+  {
+    label: "Pages",
+    href: "#",
+    dropdown: [
+      { label: "About Me", href: "/UI-Components/Pages/About" },
+      { label: "Pricing Table", href: "/UI-Components/Pages/Pricing" },
+      { label: "Gift voucher", href: "/UI-Components/Pages/GiftVoucher" },
+      { label: "Faq", href: "/UI-Components/Pages/Faq" },
+      { label: "Login", href: "/UI-Components/Pages/Login" },
+      { label: "Registration", href: "/UI-Components/Pages/Registration" },
+      { label: "Contact Us", href: "/UI-Components/Pages/Contact" },
+    ]
+  },
+  {
+    label: "Contact Us", href: "/UI-Components/Pages/Contact"
+  }
 ]
 
 const BottomNav = () => {
@@ -145,10 +169,65 @@ const BottomNav = () => {
         </div>
 
         {/* Mobile menu button */}
-        <div>
-
+        <div className="lg:hidden flex items-center justify-between gap-4">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-2xl focus:outline-none"
+          >
+            <i className="ri-menu-line"></i>
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 mt-3 transition-all duration-500">
+          <nav className="flex flex-col px-[4%] py-3 space-y-1">
+            {navLinks.map((link) => (
+              link.dropdown ? (
+                <div
+                  key={link.label}
+                  className="flex flex-col"
+                >
+                  <button
+                    className="flex justify-between items-center w-full px-4 py-2 rounded-md transition-all"
+                    onClick={() => toggleDropdown(link.label)}
+                  >
+                    <span className="font-bold">{link.label}</span>
+                    <i
+                      className={`ri-arrow-down-s-line transition-transform ${openDropdown[link.label] ? "rotate-180" : ""}`}
+                    ></i>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${openDropdown[link.label] ? "max-h-96" : "max-h-0"}`}
+                  >
+                    <div className="flex flex-col p-2">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block px-4 py-2 rounded-md transition-all border-b border-gray-300 last:border-b-0"
+                        >
+                          <span>{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="block px-4 py-2 rounded-md transition-all"
+                >
+                  <span className="font-bold">{link.label}</span>
+                </Link>
+              )
+            ))}
+          </nav>
+        </div>
+      )}
     </div>
   )
 }
