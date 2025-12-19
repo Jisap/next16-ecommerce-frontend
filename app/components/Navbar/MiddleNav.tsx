@@ -24,7 +24,7 @@ const MiddleNav = () => {
         </Link>
 
         {/* Search Box */}
-        <div className="relative flex flex-col flex-1 ms-6 mx-0 bg-white rounded-lg lg:max-w-2xl">
+        <div className="relative flex flex-col flex-1  ms-6 mx-0 bg-white rounded-lg md:mr-4 lg:max-w-[300px] xl:max-w-[400px]">
           <div className="flex items-center">
             <input
               type="text"

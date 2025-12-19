@@ -125,6 +125,29 @@ const BottomNav = () => {
         </nav>
 
         {/* Right Icons */}
+        <div className="flex items-center gap-5">
+          <Link
+            href="/UI-components/Pages/Login"
+            className="login-link border-b border-gray-400 GolosText font-semibold"
+          >
+            Login / Register
+          </Link>
+
+          <div className="flex items-center gap-6">
+            <Link href="/UI-components/Pages/Wishlist" className="relative">
+              <i className="bi bi-balloon-heart text-3xl"></i>
+            </Link>
+
+            <Link href="/UI-components/Pages/Cart" className="relative">
+              <i className="bi bi-cart3 text-3xl"></i>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile menu button */}
+        <div>
+
+        </div>
       </div>
     </div>
   )
