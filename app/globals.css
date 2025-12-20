@@ -242,3 +242,29 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.hero-shape3 {
+  position: absolute;
+  top: 10%;
+  left: -15%;
+  width: 100px;
+  height: 100px;
+  background-image: url(../public/assets/hero-shape4.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  animation: Anim-rotate 5s infinite forwards linear;
+}
+
+.hero-shape4 {
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  background-image: url(../public/assets/hero-shape3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  animation: Anim-rotate 5s infinite forwards linear;
+}

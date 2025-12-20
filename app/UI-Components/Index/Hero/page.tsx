@@ -18,8 +18,8 @@ const Hero = () => {
       <div className="px-[8%] lg:px-[10%] lg:ps-[16%] py-10">
         <div className="flex flex-col lg:flex-row gap-5 justify-between items-center relative">
 
-          {/* <div className="hero-shape3"></div>
-          <div className="hero-shape4"></div> */}
+          <div className="hero-shape3"></div>
+          <div className="hero-shape4"></div>
 
           <div className="w-full lg:w-1/2">
             <div className="hero-content">
@@ -72,6 +72,55 @@ const Hero = () => {
               <div className="star-shape2"></div>
               <div className="star-shape3"></div>
 
+              <div className="absolute top-90 right-0 shadow-2xl bg-[#ffffffcb] backdrop-blur-2xl px-3 py-2 rounded-2xl flex items-center gap-2">
+                <Image
+                  src={Herosmall}
+                  alt="Hero small"
+                  className="rounded-2xl"
+                />
+
+                <div className="w-full lg:w-[50%] relative">
+                  <h2 className="GolosText font-semibold">
+                    Cozy Knit Cardigan
+                  </h2>
+
+                  <h1 className="GolosText font-semibold text-secondary mt-2">
+                    $80
+                  </h1>
+
+                  <i className="bi bi-basket absolute -bottom-2 right-0 bg-secondary hover:bg-primary hover:text-black cursor-pointer text-white px-3 py-2 rounded-full transition-all duration-300"></i>
+                </div>
+              </div>
+
+              <div className="hero-text-wrap absolute top-120 -left-10 z-10 shadow-2xl bg-[#ffffff8e] backdrop-blur-2xl px-5 py-4 rounded-2xl flex items-center gap-2">
+                <i className="bi bi-balloon-heart text-2xl bg-secondary hover:bg-primary hover:text-black cursor-pointer text-white px-3 py-2 rounded-full transition-all duration-300"></i>
+
+                <div className="flex ms-2">
+                  <Image
+                    src={Herotest1}
+                    alt="Hero test1"
+                    width={60}
+                    height={60}
+                    className="rounded-full border border-white object-contain"
+                  />
+
+                  <Image
+                    src={Herotest2}
+                    alt="Hero test2"
+                    width={60}
+                    height={60}
+                    className="rounded-full border-2 border-white object-contain -translate-x-2"
+                  />
+
+                  <Image
+                    src={Herotest3}
+                    alt="Hero test3"
+                    width={60}
+                    height={60}
+                    className="rounded-full border-2 border-white object-contain -translate-x-4"
+                  />
+                </div>
+              </div>
 
               <Image
                 src={HeroImg}
