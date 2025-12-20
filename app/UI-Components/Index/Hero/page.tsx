@@ -68,6 +68,10 @@ const Hero = () => {
               <div className="hero-shape2"></div>
               <div className="border-shape1"></div>
               <div className="border-shape2"></div>
+              <div className="star-shape"></div>
+              <div className="star-shape2"></div>
+              <div className="star-shape3"></div>
+
 
               <Image
                 src={HeroImg}

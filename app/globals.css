@@ -197,3 +197,48 @@ body {
   border-radius: 0 0 50px 0;
   z-index: -1;
 }
+
+.star-shape {
+  position: absolute;
+  top: -2%;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  background-image: url(../public/assets/hero-shape2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  animation: Anim-rotate 5s infinite forwards linear;
+}
+
+.star-shape2 {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background-image: url(../public/assets/hero-shape2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  animation: Anim-rotate 6s infinite forwards linear;
+}
+
+.star-shape3 {
+  position: absolute;
+  top: 75%;
+  left: -12%;
+  width: 70px;
+  height: 70px;
+  background-image: url(../public/assets/hero-shape2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  animation: Anim-rotate 6s infinite forwards linear;
+}
+
+@keyframes Anim-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
