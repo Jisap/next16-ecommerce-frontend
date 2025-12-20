@@ -1,9 +1,80 @@
-import React from 'react'
+"use client"
 
-const page = () => {
+import Image from "next/image"
+import Link from "next/link"
+import heroshap1 from "@/public/assets/hero-shape1.svg"
+import HeroImg from "@/public/assets/Hero.webp"
+import Herosmall from "@/public/assets/hero-small-1.webp"
+import Herotest1 from "@/public/assets/hero-test1.webp"
+import Herotest2 from "@/public/assets/hero-test2.webp"
+import Herotest3 from "@/public/assets/hero-test3.webp"
+
+
+
+
+const Hero = () => {
   return (
-    <div>page</div>
+    <>
+      <div className="px-[8%] lg:px-[10%] lg:ps-[16%] py-10">
+        <div className="flex flex-col lg:flex-row gap-5 justify-between items-center relative">
+
+          {/* <div className="hero-shape3"></div>
+          <div className="hero-shape4"></div> */}
+
+          <div className="w-full lg:w-1/2">
+            <div className="hero-content">
+              <h1 className="GolosText text-6xl md:text-8xl lg:text-[6rem] font-semibold">
+                Your Ultimate
+              </h1>
+
+              <div className="flex items-center gap-2">
+                <Image
+                  src={heroshap1}
+                  alt="Hero Shape"
+                />
+
+                <h1 className="GolosText text-6xl md:text-8xl lg:text-[6rem] font-semibold text-secondary">
+                  Online Store
+                </h1>
+              </div>
+
+              <h1 className="GolosText text-5xl md:text-7xl lg:text-[4.5rem] font-semibold">
+                for All Your Needs.
+              </h1>
+
+              <p className="mt-3 text-xl md:text-2xl GolosText">
+                No code need. Plus free shipping on <span className="text-secondary">$99+</span> orders!
+              </p>
+
+              <div className="flex items-center gap-5 mt-5">
+                <Link href="/UI-Components/Shop">
+                  <button className="btn bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                    Our Shop
+                  </button>
+                </Link>
+
+                <Link href="/UI-Components/Shop/123">
+                  <button className="btn border border-black cursor-pointer hover:bg-black hover:text-white GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                    View Details
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-1/2">
+            <div className="hero-image">
+              <Image
+                src={HeroImg}
+                alt="Hero Image"
+                className="w-full md:w-[80%] lg:w-[80%]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
-export default page
+export default Hero
