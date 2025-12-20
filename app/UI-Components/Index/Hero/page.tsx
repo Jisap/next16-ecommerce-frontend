@@ -64,6 +64,11 @@ const Hero = () => {
 
           <div className="w-full lg:w-1/2">
             <div className="hero-image">
+              <div className="hero-shape1"></div>
+              <div className="hero-shape2"></div>
+              <div className="border-shape1"></div>
+              <div className="border-shape2"></div>
+
               <Image
                 src={HeroImg}
                 alt="Hero Image"
