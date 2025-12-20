@@ -92,8 +92,8 @@ const Hero = () => {
                 </div>
               </div>
 
-              <div className="hero-text-wrap absolute top-120 -left-10 z-10 shadow-2xl bg-[#ffffff8e] backdrop-blur-2xl px-5 py-4 rounded-2xl flex items-center gap-2">
-                <i className="bi bi-balloon-heart text-2xl bg-secondary hover:bg-primary hover:text-black cursor-pointer text-white px-3 py-2 rounded-full transition-all duration-300"></i>
+              <div className="hero-test-wrap absolute top-120 -left-10 z-10 shadow-2xl bg-[#ffffff8e] backdrop-blur-2xl px-5 py-4 rounded-2xl flex items-center gap-2">
+                <i className="bi bi-balloon-heart hero-test text-2xl bg-secondary hover:bg-primary hover:text-black cursor-pointer text-white px-3 py-2 rounded-full transition-all duration-300"></i>
 
                 <div className="flex ms-2">
                   <Image
