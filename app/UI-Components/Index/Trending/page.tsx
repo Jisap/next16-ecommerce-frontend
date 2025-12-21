@@ -39,9 +39,9 @@ const Trending = () => {
             spaceBetween={20}
             slidesPerView={4}
             loop={true}
-            // autoplay={{
-            //   delay: 2500,
-            // }}
+            autoplay={{
+              delay: 2500,
+            }}
             breakpoints={{
               1200: {
                 slidesPerView: 4,
@@ -107,6 +107,8 @@ const Trending = () => {
           </Swiper>
         </div>
       </div>
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }

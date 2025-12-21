@@ -6,5 +6,37 @@
     "price": "$80",
     "off": "Get 20% off",
     "cate": "Dresses"
+  },
+  {
+    "id": 2,
+    "title": "Sophisticated Swagger Suit",
+    "image": "/assets/product-2.webp",
+    "price": "$80",
+    "off": "Get 20% off",
+    "cate": "Dresses"
+  },
+  {
+    "id": 3,
+    "title": "Sophisticated Swagger Suit",
+    "image": "/assets/product-3.webp",
+    "price": "$80",
+    "off": "Get 20% off",
+    "cate": "Dresses"
+  },
+  {
+    "id": 4,
+    "title": "Sophisticated Swagger Suit",
+    "image": "/assets/product-4.webp",
+    "price": "$80",
+    "off": "Get 20% off",
+    "cate": "Dresses"
+  },
+  {
+    "id": 5,
+    "title": "Sophisticated Swagger Suit",
+    "image": "/assets/product-5.webp",
+    "price": "$80",
+    "off": "Get 20% off",
+    "cate": "Dresses"
   }
 ]
