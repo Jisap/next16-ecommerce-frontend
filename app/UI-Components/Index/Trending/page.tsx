@@ -74,14 +74,14 @@ const Trending = () => {
               delay: 2500,
             }}
             breakpoints={{
-              1200: {
+              1500: {
                 slidesPerView: 4,
               },
-              991: {
+              1100: {
                 slidesPerView: 3,
               },
-              575: {
-                slidesPerView: 1,
+              768: {
+                slidesPerView: 2,
               },
               0: {
                 slidesPerView: 1,
@@ -117,7 +117,7 @@ const Trending = () => {
 
                     <div className="relative left-0 -bottom-1 lg:absolute lg:bottom-18 lg:left-18">
                       <Link href={`/UI-Components/Shop/${product.id}`}>
-                        <button className="btn bg-black text-white cursor-pointer GolosText text-sm xl:text-xl px-6 py-3 rounded-2xl w-full lg:w-auto lg:rounded-full border-3 border-white">
+                        <button className="btn bg-black text-white cursor-pointer GolosText text-sm lg:text-base xl:text-lg 2xl:text-xl px-6 py-2.5 lg:py-3 rounded-2xl w-full lg:w-auto lg:rounded-full border-3 border-white">
                           View Details
                         </button>
                       </Link>
