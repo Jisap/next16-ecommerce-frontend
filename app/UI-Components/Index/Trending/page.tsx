@@ -60,7 +60,7 @@ const Trending = () => {
             {ProductData.slice(0, 5).map((product, index) => (
               <SwiperSlide key={index}>
                 <div className="product-card cursor-pointer">
-                  <div className="product-image">
+                  <div className="product-image rounded-2xl">
                     <Image
                       src={product.image}
                       alt={product.title}

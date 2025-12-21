@@ -345,6 +345,49 @@ body {
   border-top-left-radius: 100px !important;
 }
 
+/* =========================
+   Trending
+   ========================= */
+
+.product-icon {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.product-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.452), #ffffff00);
+  transition: none;
+  z-index: -1;
+}
+
+.product-icon:hover::after {
+  left: 100%;
+  transition: var(--transition-duration-slow)
+}
+
+.product-btn {
+  position: absolute;
+  bottom: 8%;
+  left: -55%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: var(--transition-fast);
+}
+
+.product-image img {
+  transition: var(--transition-fast);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
 
 /* =========================
    Media Queries
