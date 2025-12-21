@@ -58,7 +58,7 @@ const Trending = () => {
           </div>
 
           <div>
-            <button className='btn bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300'>
+            <button className='btn mb-10 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300'>
               View All
             </button>
           </div>
@@ -115,9 +115,9 @@ const Trending = () => {
                       ></i>
                     </div>
 
-                    <div className="absolute left-0 -bottom-1 lg:absolute lg:bottom-18 lg:left-18">
+                    <div className="relative left-0 -bottom-1 lg:absolute lg:bottom-18 lg:left-18">
                       <Link href={`/UI-Components/Shop/${product.id}`}>
-                        <button className="btn bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-2xl w-full lg:w-auto lg:rounded-full border-3 border-white">
+                        <button className="btn bg-black text-white cursor-pointer GolosText text-sm xl:text-xl px-6 py-3 rounded-2xl w-full lg:w-auto lg:rounded-full border-3 border-white">
                           View Details
                         </button>
                       </Link>

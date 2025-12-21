@@ -393,6 +393,58 @@ body {
    Media Queries
    ========================= */
 
+.banner {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../public/assets/Banner-1.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.banner-shop-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 5s infinite forwards linear;
+}
+
+.banner-play-img {
+  position: absolute;
+  top: 50%;
+  left: 50.5%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.splide-slide-texts {
+  background-color: var(--color-primary);
+  padding: 20px 0;
+  transform: rotate(-2deg);
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+}
+
+.splide-slide-texts h2 {
+  font-family: var(--GolosText);
+  font-weight: 600;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   Media Queries
+   ========================= */
+
 @media (max-width: 991px) {
   .star-shape2 {
     top: 35%;
@@ -464,6 +516,24 @@ body {
 
   .category-wrap .category-card:nth-child(5) {
     display: none !important;
+  }
+
+  .product-card .product-image {
+    height: 500px;
+  }
+
+  .product-card .product-image img {
+    object-fit: cover;
+    object-position: 50% center;
+  }
+
+  .product-card h2,
+  .product-card h3 {
+    font-size: 2rem;
+  }
+
+  .banner {
+    background-position: 20% center;
   }
 }
 
