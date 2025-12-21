@@ -9,34 +9,90 @@
   },
   {
     "id": 2,
-    "title": "Sophisticated Swagger Suit",
+    "title": "Checkered Slim Collar Casual Shirt",
     "image": "/assets/product-2.webp",
-    "price": "$80",
+    "price": "$94",
     "off": "Get 20% off",
-    "cate": "Dresses"
+    "cate": "Outwear"
   },
   {
     "id": 3,
-    "title": "Sophisticated Swagger Suit",
+    "title": "Solid Cut Away Collar Casual Shirt",
     "image": "/assets/product-3.webp",
-    "price": "$80",
+    "price": "$65",
     "off": "Get 20% off",
-    "cate": "Dresses"
+    "cate": "Outwear"
   },
   {
     "id": 4,
-    "title": "Sophisticated Swagger Suit",
+    "title": "Athletic Mesh Sports Leggins",
     "image": "/assets/product-4.webp",
+    "price": "$75",
+    "off": "Get 20% off",
+    "cate": "Jacket"
+  },
+  {
+    "id": 5,
+    "title": "Best Denim Overalls Shorts",
+    "image": "/assets/product-5.webp",
+    "price": "$70",
+    "off": "Get 20% off",
+    "cate": "Jacket"
+  },
+  {
+    "id": 6,
+    "title": "Best Plaid Wool Winter Coat",
+    "image": "/assets/product-6.webp",
+    "price": "$68",
+    "off": "Get 20% off",
+    "cate": "Jacket"
+  },
+  {
+    "id": 7,
+    "title": "Comfy Lounge Jogger Pants",
+    "image": "/assets/product-7.webp",
+    "price": "$79",
+    "off": "Get 20% off",
+    "cate": "Outwear"
+  },
+  {
+    "id": 8,
+    "title": "Water Resistant Windbreaker Jacket",
+    "image": "/assets/product-8.webp",
+    "price": "$97",
+    "off": "Get 20% off",
+    "cate": "Jacket"
+  },
+  {
+    "id": 9,
+    "title": "Classic Denim Skinny Jeans",
+    "image": "/assets/product-9.webp",
+    "price": "$84",
+    "off": "Get 20% off",
+    "cate": "Outwear"
+  },
+  {
+    "id": 10,
+    "title": "Stylish Fedora Hat Collection",
+    "image": "/assets/product-10.webp",
     "price": "$80",
     "off": "Get 20% off",
     "cate": "Dresses"
   },
   {
-    "id": 5,
-    "title": "Sophisticated Swagger Suit",
-    "image": "/assets/product-5.webp",
-    "price": "$80",
+    "id": 11,
+    "title": "Suede Ankñe Booties Collection",
+    "image": "/assets/product-11.webp",
+    "price": "$75",
     "off": "Get 20% off",
     "cate": "Dresses"
+  },
+  {
+    "id": 12,
+    "title": "Hiking Outdoor Gear Collection",
+    "image": "/assets/product-12.webp",
+    "price": "$94",
+    "off": "Get 20% off",
+    "cate": "Tops"
   }
 ]
