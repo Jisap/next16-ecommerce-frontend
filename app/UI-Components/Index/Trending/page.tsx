@@ -12,6 +12,37 @@ import Link from "next/link"
 
 
 const Trending = () => {
+
+  const addToWishlist = (product: any) => {
+    const stored = localStorage.getItem("wishlist")
+    let wishlist = stored ? JSON.parse(stored) : []
+
+    const exists = wishlist.find((item: any) => item.id === product.id)
+    if (exists) {
+      toast.error("Product already exists in wishlist!")
+      return
+    }
+
+    wishlist.push(product)
+    localStorage.setItem("wishlist", JSON.stringify(wishlist))
+    toast.success("Product added to wishlist!")
+  }
+
+  const addToCart = (product: any) => {
+    const stored = localStorage.getItem("cart")
+    let cart = stored ? JSON.parse(stored) : []
+
+    const exists = cart.find((item: any) => item.id === product.id)
+    if (exists) {
+      toast.error("Product already exists in cart!")
+      return
+    }
+
+    cart.push({ ...product, qty: 1 })
+    localStorage.setItem("cart", JSON.stringify(cart))
+    toast.success("Product added to cart!")
+  }
+
   return (
     <>
       <div className='px-[8%] lg:px-[16%] py-20'>
@@ -60,7 +91,7 @@ const Trending = () => {
             {ProductData.slice(0, 5).map((product, index) => (
               <SwiperSlide key={index}>
                 <div className="product-card cursor-pointer">
-                  <div className="product-image rounded-2xl">
+                  <div className="product-image rounded-2xl overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.title}
@@ -74,8 +105,14 @@ const Trending = () => {
                     </span>
 
                     <div className="absolute top-5 right-5 flex flex-col gap-2">
-                      <i className="bi bi-balloon-heart product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"></i>
-                      <i className="bi bi-cart3 product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"></i>
+                      <i
+                        onClick={() => addToWishlist(product)}
+                        className="bi bi-balloon-heart product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
+                      ></i>
+                      <i
+                        onClick={() => addToCart(product)}
+                        className="bi bi-cart3 product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
+                      ></i>
                     </div>
 
                     <div className="absolute left-0 -bottom-1 lg:absolute lg:bottom-18 lg:left-18">

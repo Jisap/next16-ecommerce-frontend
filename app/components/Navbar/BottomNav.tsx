@@ -55,6 +55,38 @@ const BottomNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<Record<string, boolean>>({});
   const [isFixed, setIsFixed] = useState(false);
+  const [wishlistCount, setWishlistCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
+
+
+  // Función que obtiene los datos de localStorage y actualiza los estados
+  const updateCounts = () => {
+    const whishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    setWishlistCount(whishlist.length)
+    setCartCount(cart.length)
+  };
+
+  //Cuando se monta el componente se ejecuta updateCounts
+  useEffect(() => {
+    updateCounts();
+  }, []);
+
+  // Cuando se actualiza el localStorage se ejecuta updateCounts
+  useEffect(() => {
+    const handler = () => updateCounts();
+    window.addEventListener("storage", handler);
+    return () => {
+      window.removeEventListener("storage", handler);
+    }
+  }, []);
+
+  // Cada 500ms se ejecuta updateCounts
+  useEffect(() => {
+    const interval = setInterval(() => updateCounts(), 500);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,10 +192,20 @@ const BottomNav = () => {
           <div className="flex items-center gap-6">
             <Link href="/UI-components/Pages/Wishlist" className="relative">
               <i className="bi bi-balloon-heart text-3xl"></i>
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {wishlistCount}
+                </span>
+              )}
             </Link>
 
             <Link href="/UI-components/Pages/Cart" className="relative">
               <i className="bi bi-cart3 text-3xl"></i>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
@@ -173,10 +215,20 @@ const BottomNav = () => {
           <div className="flex items-center gap-4">
             <Link href="/UI-components/Pages/Wishlist" className="relative">
               <i className="bi bi-balloon-heart text-3xl"></i>
+              {wishlistCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {wishlistCount}
+                </span>
+              )}
             </Link>
 
             <Link href="/UI-components/Pages/Cart" className="relative">
               <i className="bi bi-cart3 text-3xl"></i>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
 
