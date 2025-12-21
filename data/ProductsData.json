@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "Sophisticated Swagger Suit",
+    "image": "/assets/product-1.webp",
+    "price": "$80",
+    "off": "Get 20% off",
+    "cate": "Dresses"
+  }
+]
