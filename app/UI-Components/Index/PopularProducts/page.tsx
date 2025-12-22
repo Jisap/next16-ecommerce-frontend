@@ -99,8 +99,8 @@ const PopularProducts = () => {
                   className={`mix ${product.cate} relative product-card popular-product cursor-pointer`}
                 >
                   <div className="product-card cursor-pointer relative">
-                    <div className="product-image rounded-2xl relative">
-                      <div className="overflow-hidden rounded-2xl">
+                    <div className="popular-product-image-wrapper relative">
+                      <div className="product-image rounded-2xl relative overflow-hidden">
                         <Image
                           src={product.image}
                           alt={product.title}
@@ -108,21 +108,21 @@ const PopularProducts = () => {
                           height={500}
                           className="w-full h-full object-cover rounded-2xl"
                         />
-                      </div>
 
-                      <span className="absolute top-3 left-3 px-4 py-1 GolosText bg-white rounded-full z-10">
-                        {product.off}
-                      </span>
+                        <span className="absolute top-3 left-3 px-4 py-1 GolosText bg-white rounded-full z-10">
+                          {product.off}
+                        </span>
 
-                      <div className="absolute top-5 right-5 flex flex-col gap-2 z-10">
-                        <i
-                          onClick={() => addToWishlist(product)}
-                          className="bi bi-balloon-heart product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
-                        ></i>
-                        <i
-                          onClick={() => addToCart(product)}
-                          className="bi bi-cart3 product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
-                        ></i>
+                        <div className="absolute top-5 right-5 flex flex-col gap-2 z-10">
+                          <i
+                            onClick={() => addToWishlist(product)}
+                            className="bi bi-balloon-heart product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
+                          ></i>
+                          <i
+                            onClick={() => addToCart(product)}
+                            className="bi bi-cart3 product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
+                          ></i>
+                        </div>
                       </div>
 
                       <div className="popular-product-btn-wrapper">
