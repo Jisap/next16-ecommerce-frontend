@@ -390,7 +390,7 @@ body {
 }
 
 /* =========================
-   Media Queries
+   Banner
    ========================= */
 
 .banner {
@@ -570,7 +570,7 @@ body {
   .popular-product .product-image {
     overflow: visible !important;
   }
-  
+
   .popular-product-image-wrapper .popular-product-btn-wrapper {
     position: absolute;
     bottom: 0;

@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
+import PopularProductCard from "@/app/components/Product-Card"
 
 
 const PopularProducts = () => {
@@ -98,7 +99,7 @@ const PopularProducts = () => {
                   key={product.id}
                   className={`mix ${product.cate} relative product-card popular-product cursor-pointer`}
                 >
-                  <div className="product-card cursor-pointer relative">
+                  {/* <div className="product-card cursor-pointer relative">
                     <div className="popular-product-image-wrapper relative">
                       <div className="product-image rounded-2xl relative overflow-hidden">
                         <Image
@@ -147,7 +148,12 @@ const PopularProducts = () => {
                         </div>
                       </div>
                     </Link>
-                  </div>
+                  </div> */}
+                  <PopularProductCard
+                    product={product}
+                    addToWishlist={addToWishlist}
+                    addToCart={addToCart}
+                  />
                 </div>
               )
             })}

@@ -8,6 +8,7 @@ import ProductData from "@/data/ProductsData.json"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Link from "next/link"
+import ProductCard from "@/app/components/Product-Card"
 
 
 
@@ -90,7 +91,7 @@ const Trending = () => {
           >
             {ProductData.slice(0, 5).map((product, index) => (
               <SwiperSlide key={index}>
-                <div className="product-card cursor-pointer">
+                {/* <div className="product-card cursor-pointer">
                   <div className="product-image rounded-2xl overflow-hidden">
                     <Image
                       src={product.image}
@@ -138,7 +139,12 @@ const Trending = () => {
                     </div>
                   </Link>
 
-                </div>
+                </div> */}
+                <ProductCard
+                  product={product}
+                  addToWishlist={addToWishlist}
+                  addToCart={addToCart}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
