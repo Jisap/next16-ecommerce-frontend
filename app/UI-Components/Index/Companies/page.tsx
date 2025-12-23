@@ -34,9 +34,9 @@ const Companies = () => {
     <>
       <div className='px-[8%] py-20 pt-30'>
         <div className="companies-banner py-20">
-          {/* <div className="company-shape hidden lg:block">
+          <div className="company-shape hidden lg:block">
             <Image
-              src={bannerStar}
+              src={bannerCircle}
               alt="Banner Star"
               width={200}
               height={200}
@@ -44,13 +44,13 @@ const Companies = () => {
             />
 
             <Image
-              src={bannerCircle}
+              src={bannerStar}
               alt="Banner Circle"
               width={70}
               height={70}
               className=""
             />
-          </div> */}
+          </div>
 
           <div className="px-[5%] md:px-[8%]">
             <h1 className="GolosText text-white text-3xl md:text-5xl lg:text-7xl font-semibold w-full lg:w-[74%]">
