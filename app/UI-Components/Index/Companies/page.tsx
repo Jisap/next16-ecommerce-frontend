@@ -57,6 +57,74 @@ const Companies = () => {
               We´re just keep growing with 6.3k trusted companies.
             </h1>
           </div>
+
+          <div className="w-full md:mt-20 mt-10 overflow-hidden">
+            <Splide
+              options={{
+                type: "loop",
+                drag: "free",
+                arrows: false,
+                pagination: false,
+                autoWidth: true,
+                gap: "60px",
+                autoScroll: {
+                  speed: 0.6,
+                  pauseOnHover: true,
+                  pauseOnFocus: false,
+                }
+              }}
+              extensions={{ AutoScroll }}
+            >
+              {Companys.map((company, index) => (
+                <SplideSlide key={index}>
+                  <div className="company-card cursor-pointer bg-white px-10 py-8 rounded-2xl">
+
+                    <Image
+                      src={company}
+                      alt="Company"
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+
+          <div className="w-full mt-10 overflow-hidden">
+            <Splide
+              options={{
+                type: "loop",
+                drag: "free",
+                arrows: false,
+                pagination: false,
+                autoWidth: true,
+                gap: "60px",
+                autoScroll: {
+                  speed: -0.5,
+                  pauseOnHover: true,
+                  pauseOnFocus: false,
+                }
+              }}
+              extensions={{ AutoScroll }}
+            >
+              {Companys.map((company, index) => (
+                <SplideSlide key={index}>
+                  <div className="company-card cursor-pointer bg-white px-10 py-8 rounded-2xl">
+
+                    <Image
+                      src={company}
+                      alt="Company"
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
         </div>
       </div>
     </>
