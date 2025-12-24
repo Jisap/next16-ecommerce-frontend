@@ -16,9 +16,9 @@
   {
     "id": 2,
     "image": "/assets/blog-2.webp",
-    "date": "25 jan, 2025",
-    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
-    "smallTitle": "Trendsetter fashion Unveiling",
+    "date": "30 jan, 2025",
+    "title": "Runway Rundown: Decoding Fashion Week´s Best Looks",
+    "smallTitle": "Runway Rundown Fashion",
     "gallery": [
       "/assets/blog-gallery-1.webp",
       "/assets/blog-gallery-2.webp",
@@ -30,9 +30,9 @@
   {
     "id": 3,
     "image": "/assets/blog-3.webp",
-    "date": "25 jan, 2025",
-    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
-    "smallTitle": "Trendsetter fashion Unveiling",
+    "date": "10 jan, 2025",
+    "title": "Fashion Forward: Spotlight on Emerging Designers.",
+    "smallTitle": "Fashion Forward Emerging Designers",
     "gallery": [
       "/assets/blog-gallery-1.webp",
       "/assets/blog-gallery-2.webp",
@@ -44,9 +44,9 @@
   {
     "id": 4,
     "image": "/assets/blog-4.webp",
-    "date": "25 jan, 2025",
-    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
-    "smallTitle": "Trendsetter fashion Unveiling",
+    "date": "10 jan, 2025",
+    "title": "Accessorize Me: The Power of Statement Pieces.",
+    "smallTitle": "Accessorize Me Statement Pieces",
     "gallery": [
       "/assets/blog-gallery-1.webp",
       "/assets/blog-gallery-2.webp",
@@ -58,9 +58,9 @@
   {
     "id": 5,
     "image": "/assets/blog-5.webp",
-    "date": "25 jan, 2025",
-    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
-    "smallTitle": "Trendsetter fashion Unveiling",
+    "date": "07 jan, 2025",
+    "title": "DIY Couture: Crafting Your Own Fashion Masterpieces.",
+    "smallTitle": "DIY Couture Fashion Masterpieces",
     "gallery": [
       "/assets/blog-gallery-1.webp",
       "/assets/blog-gallery-2.webp",
@@ -72,9 +72,37 @@
   {
     "id": 6,
     "image": "/assets/blog-6.webp",
-    "date": "25 jan, 2025",
-    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "date": "05 jan, 2025",
+    "title": "The Sustainable Wardrobe A Greener Approach to Fashion.",
+    "smallTitle": "The Sustainable Wardrobe Greener Approach",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "image": "/assets/blog-7.webp",
+    "date": "02 jan, 2025",
+    "title": "The most important trends in fashion today",
     "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "image": "/assets/blog-8.webp",
+    "date": "02 jan, 2025",
+    "title": "Addicted to fashion: The power of style.",
+    "smallTitle": "Addicted to fashion Style",
     "gallery": [
       "/assets/blog-gallery-1.webp",
       "/assets/blog-gallery-2.webp",
