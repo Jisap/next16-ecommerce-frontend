@@ -731,6 +731,16 @@ body {
   .idx-blog-wrap .idx-blog-item .blog-image {
     border-radius: 10px !important;
   }
+
+  .follow::after {
+    height: 50px;
+    top: -4%
+  }
+
+  .follow::before {
+    height: 50px;
+    bottom: -5%
+  }
 }
 
 /* =========================
@@ -804,5 +814,15 @@ body {
   .hero-shape1,
   .hero-shape4 {
     display: none !important;
+  }
+
+  .follow::after {
+    height: 50px;
+    top: -4%
+  }
+
+  .follow::before {
+    height: 50px;
+    bottom: -5%
   }
 }
