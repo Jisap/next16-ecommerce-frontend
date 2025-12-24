@@ -33,9 +33,10 @@ const Follow = () => {
             alt="insta-follow"
             width={40}
             height={40}
+            className="z-5"
           />
 
-          <h2 className="GolosText font-semibold text-xl">
+          <h2 className="GolosText font-semibold text-xl z-5">
             Follow @Fashique
           </h2>
         </div>
