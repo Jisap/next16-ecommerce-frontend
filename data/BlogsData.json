@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "image": "/assets/blog-1.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/assets/blog-2.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/assets/blog-3.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/assets/blog-4.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/assets/blog-5.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "image": "/assets/blog-6.webp",
+    "date": "25 jan, 2025",
+    "title": "Trendsetter Chronicles: Unveiling the latest in fashion.",
+    "smallTitle": "Trendsetter fashion Unveiling",
+    "gallery": [
+      "/assets/blog-gallery-1.webp",
+      "/assets/blog-gallery-2.webp",
+      "/assets/blog-gallery-3.webp",
+      "/assets/blog-gallery-4.webp",
+      "/assets/blog-gallery-5.webp"
+    ]
+  }
+]
