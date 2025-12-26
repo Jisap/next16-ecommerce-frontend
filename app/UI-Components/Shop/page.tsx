@@ -107,6 +107,37 @@ const Shop = () => {
                 </div>
               )}
             </div>
+
+            <div className="relative">
+              <button
+                onClick={() => setIsOpenCategory(!isOpenCategory)} // Toggle sort dropdown
+                className="px-6 py-3 bg-black text-white GolosText rounded-full flex items-center gap-3 cursor-pointer"
+              >
+                {/* Latest, Oldest, Low to High, High to Low */}
+                {selectedCategory}
+                <i className="ri-arrow-down-s-line text-xl"></i>
+              </button>
+
+              {isOpenCategory && (
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-xl overflow-hidden z-50">
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleCategorySelect("All")}>
+                    All
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleCategorySelect("Dresses")}>
+                    Dresses
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleCategorySelect("Tops")}>
+                    Tops
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleCategorySelect("Outerwear")}>
+                    Outerwear
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleCategorySelect("Jacket")}>
+                    Jacket
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
         </div>
