@@ -62,6 +62,100 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <div className="w-full lg:w-1/2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div>
+                <h2 className="GolosText mb-5 font-semibold text-2xl">Our Stores</h2>
+
+                <div className="flex flex-col gap-3">
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    New York
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    London SF
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Edinburgh
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Los Angeles
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Chicago
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Las Vegas
+                  </Link>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="GolosText mb-5 font-semibold text-2xl">Useful Links</h2>
+
+                <div className="flex flex-col gap-3">
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Privacy Policy
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Returns
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Term & Conditions
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Contact Us
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Latest News
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Our Sitemap
+                  </Link>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="GolosText mb-5 font-semibold text-2xl">Quick Links</h2>
+
+                <div className="flex flex-col gap-3">
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Portfolio
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    About Me
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Pricing
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Vouchers
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Faq's
+                  </Link>
+
+                  <Link href="/" className="GolosText font-semibold hover:text-secondary hover:ps-2 transition-all duration-300">
+                    Our Teams
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
