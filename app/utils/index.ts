@@ -1,10 +1,11 @@
+import { ProductType } from "@/app/types/types";
 import { toast } from "react-toastify";
 
-export const addToWishlist = (product: any) => {
+export const addToWishlist = (product: ProductType): void => {
   const stored = localStorage.getItem("wishlist");
-  let wishlist = stored ? JSON.parse(stored) : [];
+  let wishlist: ProductType[] = stored ? JSON.parse(stored) : [];
 
-  const exists = wishlist.find((item: any) => item.id === product.id);
+  const exists = wishlist.find((item: ProductType) => item.id === product.id);
   if (exists) {
     toast.error("Product already exists in wishlist!");
     return;
@@ -15,11 +16,11 @@ export const addToWishlist = (product: any) => {
   toast.success("Product added to wishlist!");
 };
 
-export const addToCart = (product: any) => {
+export const addToCart = (product: ProductType): void => {
   const stored = localStorage.getItem("cart");
-  let cart = stored ? JSON.parse(stored) : [];
+  let cart: (ProductType & { qty: number })[] = stored ? JSON.parse(stored) : [];
 
-  const exists = cart.find((item: any) => item.id === product.id);
+  const exists = cart.find((item: ProductType) => item.id === product.id);
   if (exists) {
     toast.error("Product already exists in cart!");
     return;
@@ -29,3 +30,5 @@ export const addToCart = (product: any) => {
   localStorage.setItem("cart", JSON.stringify(cart));
   toast.success("Product added to cart!");
 };
+
+

@@ -5,9 +5,46 @@ import ProductData from "@/data/ProductsData.json";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { useMemo, useState } from "react";
+import { addToCart, addToWishlist } from "@/app/utils";
+
 
 
 const Shop = () => {
+
+  const [isOpenSort, setIsOpenSort] = useState(false);
+  const [isOpenCategory, setIsOpenCategory] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("Oldest");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const convertPrice = (price: string): number => Number(price.replace("$", ""));
+
+  const sortedData = useMemo(() => {
+    let data = [...ProductData];
+
+    if (selectedCategory !== "All") {
+      data = data.filter(item => item.cate === selectedCategory) // Filtrado por categoría
+    }
+
+    switch (selectedFilter) {
+      case "Latest":
+        data.sort((a, b) => b.id - a.id);
+        break;
+      case "Oldest":
+        data.sort((a, b) => a.id - b.id);
+        break;
+      case "Low to High":
+        data.sort((a, b) => convertPrice(a.price) - convertPrice(b.price));
+        break;
+      case "High to Low":
+        data.sort((a, b) => convertPrice(b.price) - convertPrice(a.price));
+        break;
+      default:
+        return data;
+    }
+  }, [selectedCategory, selectedFilter])
+
+
   return (
     <>
       {/* Page Title Section */}
