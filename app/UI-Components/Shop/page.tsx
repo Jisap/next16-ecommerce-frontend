@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { useMemo, useState } from "react";
 import { addToCart, addToWishlist } from "@/app/utils";
+import ProductCard from "@/app/components/Product-Card";
 
 
 
@@ -26,7 +27,7 @@ const Shop = () => {
       data = data.filter(item => item.cate === selectedCategory) // Filtrado por categoría
     }
 
-    switch (selectedFilter) {
+    switch (selectedFilter) { // Filtrado por precio
       case "Latest":
         data.sort((a, b) => b.id - a.id);
         break;
@@ -139,9 +140,22 @@ const Shop = () => {
               )}
             </div>
           </div>
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {sortedData.map((product, index) => (
+            <div key={index}>
+              <ProductCard
+                product={product}
+                addToWishlist={addToWishlist}
+                addToCart={addToCart}
+              />
+            </div>
+          ))}
         </div>
       </div>
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }

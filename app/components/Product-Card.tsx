@@ -1,19 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
-interface Product {
-  id: number;
-  title: string;
-  image: string;
-  price: string;
-  off: string;
-  cate?: string;
-}
+import { ProductType } from "@/app/types/types";
 
 interface ProductCardProps {
-  product: Product;
-  addToWishlist: (product: Product) => void;
-  addToCart: (product: Product) => void;
+  product: ProductType;
+  addToWishlist: (product: ProductType) => void;
+  addToCart: (product: ProductType) => void;
 }
 
 const ProductCard = ({ product, addToWishlist, addToCart }: ProductCardProps) => {
