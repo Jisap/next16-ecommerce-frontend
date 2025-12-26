@@ -157,6 +157,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        <div className="border-t border-gray-400 py-5 text-center">
+          <p className="GolosText text-xl">© 2025 Ecommerce. All rights reserved by <Link href="#" className="transition-all duration-300 hover:text-secondary">FashiQue</Link>.</p>
+        </div>
       </div>
     </>
   )
