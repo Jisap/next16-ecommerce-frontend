@@ -684,6 +684,10 @@ body {
   .idx-blog-wrap .idx-blog-item .blog-image {
     height: 450px;
   }
+
+  .page-section {
+    background-position: center center;
+  }
 }
 
 @media (max-width: 575px) {
@@ -764,6 +768,10 @@ body {
   .follow::before {
     height: 50px;
     bottom: -5%
+  }
+
+  .page-section {
+    background-position: 60%;
   }
 }
 

@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css"
 import { useMemo, useState } from "react";
 import { addToCart, addToWishlist } from "@/app/utils";
 import ProductCard from "@/app/components/Product-Card";
+import Follow from "../Index/Follow/page";
+import PageHeader from "@/app/components/PageHeader";
 
 
 
@@ -61,7 +63,7 @@ const Shop = () => {
   return (
     <>
       {/* Page Title Section */}
-      <div className="page-section flex justify-center items-center text-center">
+      {/* <div className="page-section flex justify-center items-center text-center">
         <div className="z-10 flex flex-col justify-center items-center text-center">
           <h2 className="text-white text-8xl GolosText font-semibold">Shop</h2>
 
@@ -71,7 +73,9 @@ const Shop = () => {
             <span className="">Shop</span>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <PageHeader title="Shop" currentPage="Shop" />
 
       <div className="px-[8%] lg:px-[16%] gap-5 py-30 pt-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-5">
@@ -154,6 +158,8 @@ const Shop = () => {
           ))}
         </div>
       </div>
+
+      <Follow />
 
       <ToastContainer position="top-right" autoClose={1500} />
     </>
