@@ -39,10 +39,22 @@ const Shop = () => {
       case "High to Low":
         data.sort((a, b) => convertPrice(b.price) - convertPrice(a.price));
         break;
-      default:
-        return data;
     }
-  }, [selectedCategory, selectedFilter])
+    return data;
+  }, [selectedCategory, selectedFilter]);
+
+  const start = sortedData.length > 0 ? 1 : 0;
+  const end = sortedData.length;
+
+  const handleSortSelect = (value: any) => {
+    setSelectedFilter(value);
+    setIsOpenSort(false);
+  }
+
+  const handleCategorySelect = (value: any) => {
+    setSelectedCategory(value);
+    setIsOpenCategory(false);
+  }
 
 
   return (
@@ -57,6 +69,46 @@ const Shop = () => {
             <i className="ri-arrow-right-wide-line pt-2 px-2"></i>
             <span className="">Shop</span>
           </div>
+        </div>
+      </div>
+
+      <div className="px-[8%] lg:px-[16%] gap-5 py-30 pt-10">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-5">
+          <p className="text-lg GolosText text-black/80">
+            Showing <span className="font-semibold">{start}-{end}</span> of {" "}
+            <span className="font-semibold">{ProductData.length}</span> results
+          </p>
+
+          <div className="flex items-center gap-5">
+            <div className="relative">
+              <button
+                onClick={() => setIsOpenSort(!isOpenSort)} // Toggle sort dropdown
+                className="px-6 py-3 bg-black text-white GolosText rounded-full flex items-center gap-3 cursor-pointer"
+              >
+                {/* Latest, Oldest, Low to High, High to Low */}
+                {selectedFilter}
+                <i className="ri-arrow-down-s-line text-xl"></i>
+              </button>
+
+              {isOpenSort && (
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-xl overflow-hidden z-50">
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleSortSelect("Latest")}>
+                    Latest
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleSortSelect("Oldest")}>
+                    Oldest
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleSortSelect("Low to High")}>
+                    Low to High
+                  </div>
+                  <div className="px-5 py-3 hover:bg-gray-100 cursor-pointer" onClick={() => handleSortSelect("High to Low")}>
+                    High to Low
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
     </>
