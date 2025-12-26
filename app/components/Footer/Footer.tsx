@@ -21,6 +21,44 @@ const Footer = () => {
                 >
                   Fashi<span className="text-secondary">Que</span>
                 </Link>
+
+                <p className="mt-5 GolosText">Address: 123 Main St, Anytown, USA</p>
+                <p className="mt-2 GolosText">Email: info@fashique.com</p>
+                <p className="mt-2 GolosText">Phone: 123-456-7890</p>
+                <h4 className="mt-10 GolosText font-semibold">Subscribe to our newsletter</h4>
+
+                <div className="mt-2 bg-yellow-100 px-4 py-2 rounded-md border border-secondary">
+                  <input type="text" placeholder="Enter your email" className="focus:outline-none w-full text-black GolosText" />
+                </div>
+              </div>
+
+              <div className="w-full lg:w-1/2">
+                {BlogsData.slice(0, 3).map((blog, index) => (
+                  <div key={index} className="idx-blog-item hidden lg:flex">
+                    <div className="flex flex-col px-3 py-2 mb-3 md:flex-row justify-between">
+                      <div className="w-full lg:w-1/2">
+                        <div className="blog-image">
+                          <Image
+                            src={blog.image}
+                            alt={blog.title}
+                            width={100}
+                            height={100}
+                            className="w-full h-full object-cover rounded-2xl"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="w-full lg:w-1/1">
+                        <div className="flex flex-col h-full justify-between gap-5">
+                          <div className="ml-3">
+                            <h2 className="GolosText font-semibold">{blog.smallTitle}</h2>
+                            <span className="py-1 rounded-md">{blog.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
