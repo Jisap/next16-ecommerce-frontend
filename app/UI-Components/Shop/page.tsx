@@ -75,6 +75,7 @@ const Shop = () => {
         </div>
       </div> */}
 
+      {/* Page Title Section Component */}
       <PageHeader title="Shop" currentPage="Shop" />
 
       <div className="px-[8%] lg:px-[16%] gap-5 py-30 pt-10">
