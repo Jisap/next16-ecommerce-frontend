@@ -79,6 +79,38 @@ const ProductDetailsPage = () => {
                     <i className="bi bi-star-half text-yellow-300"></i>
                     <i className="bi bi-star text-yellow-300"></i>
                   </div>
+
+                  <p className="GolosText">4.7 Rating</p>
+                </div>
+
+                <p className="text-gray-600 GolosText">
+                  This product is part of our high-quality collection, crafted with comfort, style, and premium fit. Perfect for casual and formal occasions.
+                </p>
+
+                <div className="flex items-center gap-10 my-5 border-b border-gray-400 pb-5">
+                  <div>
+                    <h2 className="GolosText text-xl font-semibold mb-2">Quantity</h2>
+
+                    <div className="flex items-center gap-2">
+                      <span
+                        onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                        className="w-10 h-10 bg-black text-white rounded-full flex justify-center items-center text-5xl pb-3 cursor-pointer"
+                      >
+                        -
+                      </span>
+
+                      <span className="w-10 h-10 border rounded-full flex justify-center items-center text-center text-2xl pb-1">
+                        {quantity}
+                      </span>
+
+                      <span
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="w-10 h-10 bg-black text-white rounded-full flex justify-center items-center text-5xl pb-3 cursor-pointer"
+                      >
+                        +
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
