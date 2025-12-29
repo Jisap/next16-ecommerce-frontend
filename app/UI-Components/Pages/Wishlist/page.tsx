@@ -1,21 +1,15 @@
 "use client"
 
 import PageHeader from "@/app/components/PageHeader"
+import { ProductType } from "@/app/types/types"
+import { addToCart } from "@/app/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import Follow from "../../Index/Follow/page"
 
-
-type ProductType = {
-  id: number;
-  title: string;
-  price: string;
-  image: string;
-  off?: string;
-  cate?: string;
-}
 
 const Wishlist = () => {
 
@@ -64,12 +58,40 @@ const Wishlist = () => {
                     height={100}
                     className="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-cover"
                   />
+
+                  <div>
+                    <h2 className="text-2xl font-semibold">{product.title}</h2>
+
+                    <div className="flex items-center gap-3 mt-2">
+                      <span className="text-2xl font-bold">{product.price}</span>
+                      <span className="bg-black rounded-full text-white px-4 py-1">{product.off}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5 md:mt-0">
+                  <p className="text-lg text-green-600 font-semibold">
+                    In Stock
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-5 mt-5 md:mt-0">
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="px-6 py-3 bg-black text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText"
+                  >
+                    Add To Cart
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }
