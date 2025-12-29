@@ -3,9 +3,11 @@ import Link from "next/link";
 interface PageHeaderProps {
   title: string;
   currentPage: string;
+  parentPage?: string;
+  parentLink?: string;
 }
 
-const PageHeader = ({ title, currentPage }: PageHeaderProps) => {
+const PageHeader = ({ title, currentPage, parentPage, parentLink }: PageHeaderProps) => {
   return (
     <div
       className="relative z-1 flex h-[400px] w-full items-center justify-center bg-cover bg-no-repeat text-center bg-position-[60%] sm:bg-center lg:bg-[initial]"
@@ -21,6 +23,14 @@ const PageHeader = ({ title, currentPage }: PageHeaderProps) => {
           <Link href="/" className="hover:text-primary">
             Home
           </Link>
+          {parentPage && parentLink && (
+            <>
+              <i className="ri-arrow-right-wide-line px-2 pt-2"></i>
+              <Link href={parentLink} className="hover:text-primary">
+                {parentPage}
+              </Link>
+            </>
+          )}
           <i className="ri-arrow-right-wide-line px-2 pt-2"></i>
           <span className="">{currentPage}</span>
         </div>
