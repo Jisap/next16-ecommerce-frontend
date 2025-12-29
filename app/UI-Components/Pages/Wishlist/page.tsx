@@ -82,6 +82,13 @@ const Wishlist = () => {
                   >
                     Add To Cart
                   </button>
+
+                  <button
+                    onClick={() => removeItem(product.id)}
+                    className="px-6 py-3 border hover:bg-secondary hover:border-transparent hover:text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText transition-all duration-300"
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             ))}
