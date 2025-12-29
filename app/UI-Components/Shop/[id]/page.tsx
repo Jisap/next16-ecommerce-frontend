@@ -8,6 +8,9 @@ import packBox from "@/public/assets/pack-box.png"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 import PageHeader from "@/app/components/PageHeader"
+import { addToCart, addToWishlist } from "@/app/utils"
+import Follow from "../../Index/Follow/page"
+import { ToastContainer } from "react-toastify"
 
 
 type ProductType = {
@@ -298,10 +301,30 @@ const ProductDetailsPage = () => {
                   ${totalPrice}
                 </h2>
               </div>
+
+              <button
+                onClick={() => addToWishlist(product)}
+                className="btn border w-full border-black cursor-pointer hover:bg-black hover:text-white GolosText text-xl px-6 py-3 rounded-md transition-all duration-300"
+              >
+                <i className="bi bi-ballon-heart"></i>
+                Add to wishlist
+              </button>
+
+              <button
+                onClick={() => addToCart(product)}
+                className="btn border w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300"
+              >
+                <i className="bi bi-cart3"></i>
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }
