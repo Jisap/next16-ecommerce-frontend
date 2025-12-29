@@ -48,7 +48,7 @@ const Wishlist = () => {
             {wishlist.map((product) => (
               <div
                 key={product.id}
-                className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-400 pb-8"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-400 pb-8 flex-wrap gap-5"
               >
                 <div className="flex items-center gap-5">
                   <Image
@@ -78,14 +78,14 @@ const Wishlist = () => {
                 <div className="flex items-center gap-5 mt-5 md:mt-0">
                   <button
                     onClick={() => addToCart(product)}
-                    className="px-6 py-3 bg-black text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText"
+                    className="px-6 py-3 bg-black text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText whitespace-nowrap shrink-0"
                   >
                     Add To Cart
                   </button>
 
                   <button
                     onClick={() => removeItem(product.id)}
-                    className="px-6 py-3 border hover:bg-secondary hover:border-transparent hover:text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText transition-all duration-300"
+                    className="px-6 py-3 border hover:bg-secondary hover:border-transparent hover:text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText transition-all duration-300 whitespace-nowrap shrink-0"
                   >
                     Remove
                   </button>
