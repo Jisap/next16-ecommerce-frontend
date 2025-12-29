@@ -92,6 +92,13 @@ const Wishlist = () => {
                 </div>
               </div>
             ))}
+
+            <Link href="/UI-Components/Pages/Cart">
+              <button className="btn mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                <i className="bi bi-cart3 mr-3"></i>
+                View Cart
+              </button>
+            </Link>
           </div>
         )}
       </div>
