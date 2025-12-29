@@ -111,6 +111,25 @@ const ProductDetailsPage = () => {
                       </span>
                     </div>
                   </div>
+
+                  <div>
+                    <h2 className="GolosText text-xl font-semibold mb-2">Size</h2>
+
+                    <div className="flex items-center gap-2">
+                      {["S", "M", "L"].map((size) => (
+                        <button
+                          key={size}
+                          onClick={() => setActiveSize(size)}
+                          className={`
+                          w-10 h-10 rounded-full flex justify-center items-center text-center text-xl pb-1 cursor-pointer transition-all duration-300
+                          ${activeSize === size ? "bg-black text-white border-black" : "bg-transparent text-black"}
+                        `}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
