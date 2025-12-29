@@ -20,7 +20,7 @@ const navLinks: NavLink[] = [
       { label: "Shop", href: "/UI-Components/Shop" },
       { label: "Details", href: "/UI-Components/Shop/123" },
       { label: "Cart", href: "/UI-Components/Pages/Cart" },
-      { label: "Whishlist", href: "/UI-Components/Pages/Whishlist" },
+      { label: "Wishlist", href: "/UI-Components/Pages/Wishlist" },
       { label: "Checkout", href: "/UI-Components/Pages/Checkout" },
     ]
   },
