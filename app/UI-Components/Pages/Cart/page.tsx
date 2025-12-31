@@ -218,6 +218,10 @@ const Cart = () => {
         )}
       </div>
 
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
+
     </>
   )
 }
