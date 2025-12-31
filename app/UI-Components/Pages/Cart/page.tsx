@@ -60,13 +60,14 @@ const Cart = () => {
         parentLink="/UI-Components/Shop"
       />
 
-      <div className="px-[8%] lg:px-[20%] py-20">
+      <div className="px-[8%] lg:px-[12%] py-20">
         {cart.length === 0 ? (
           <p className="text-2xl text-secondary GolosText border border-gray-400 px-5 py-2 rounded-full">
             Your Cart is empty
           </p>
         ) : (
-          <div className="flex flex-col lg:flex-row gap-5 justify-between">
+          <div className="flex flex-col lg:flex-row gap-10 justify-between">
+            {/* cart content */}
             <div className="w-full lg:w-1/1">
               <div className="flex flex-col gap-10">
                 {cart.map((product) => (
@@ -131,6 +132,84 @@ const Cart = () => {
                 <Link href="/UI-Components/Pages/Checkout">
                   <button className="btn w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl py-2 px-3 rounded-2xl">
                     <i className="bi bi-cart4"></i> CheckOut
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Stiky content */}
+            <div className="w-full lg:w-1/2 sticky top-25 left-0 h-full">
+              <div className="border rounded-2xl p-4">
+                <button className="btn border w-full border-black cursor-pointer hover:bg-black hover:text-white GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                  Bank Offer 5% Cashback
+                </button>
+
+                <div className="mt-5 border w-full px-6 py-3 rounded-md border-black cursor-pointer">
+                  <div className="flex items-center gap-5">
+                    <Image
+                      src={returnPolicy}
+                      alt="return-policy"
+                      width={70}
+                      height={70}
+                      className="opacity-80"
+                    />
+
+                    <div className="flex flex-col">
+                      <h2 className="GolosText">
+                        Easy Returns
+                      </h2>
+
+                      <h2 className="Lufga font-medium">
+                        30 Days
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5 border w-full px-6 py-3 rounded-md border-black cursor-pointer">
+                  <div className="flex items-center gap-5">
+                    <Image
+                      src={packBox}
+                      alt="return-policy"
+                      width={70}
+                      height={70}
+                      className="opacity-80"
+                    />
+
+                    <div className="flex flex-col">
+                      <h2 className="Lufga font-medium">
+                        Enjoy the Product
+                      </h2>
+
+                      <h2 className="GolosText text-[14px]">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+
+                <h2 className="mt-3 flex items-center gap-2 GolosText">
+                  <i className="bi bi-check2-circle text-2xl"></i>
+                  You will save $50 on this order
+                </h2>
+
+                <div className="flex justify-between items-center gap-3 border-t border-gray-400 my-3 pt-3">
+                  <h2 className="text-xl GolosText">
+                    Total
+                  </h2>
+
+                  <h2 className="text-2xl GolosText font-semibold">
+                    ${calculateTotal().toFixed(2)}
+                  </h2>
+                </div>
+
+                <Link href="/UI-Components/Pages/Checkout">
+                  <button
+                    onClick={() => { }}
+                    className="btn border w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300"
+                  >
+                    <i className="bi bi-cart3"></i>
+                    Place Order
                   </button>
                 </Link>
               </div>
