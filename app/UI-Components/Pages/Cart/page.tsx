@@ -59,6 +59,86 @@ const Cart = () => {
         parentPage="Shop"
         parentLink="/UI-Components/Shop"
       />
+
+      <div className="px-[8%] lg:px-[20%] py-20">
+        {cart.length === 0 ? (
+          <p className="text-2xl text-secondary GolosText border border-gray-400 px-5 py-2 rounded-full">
+            Your Cart is empty
+          </p>
+        ) : (
+          <div className="flex flex-col lg:flex-row gap-5 justify-between">
+            <div className="w-full lg:w-1/1">
+              <div className="flex flex-col gap-10">
+                {cart.map((product) => (
+                  <div
+                    key={product.id}
+                    className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-400 pb-8"
+                  >
+                    {/* Img + title + price */}
+                    <div className="flex items-center gap-5">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        width={100}
+                        height={100}
+                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl object-cover"
+                      />
+
+                      <div>
+                        <h2 className="text-2xl font-semibold">{product.title}</h2>
+
+                        <div className="flex items-center gap-3 mt-2">
+                          <span className="text-2xl font-bold">{product.price}</span>
+                          <span className="bg-black rounded-full text-white px-4 py-1">{product.off}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* btn qty + btn remove */}
+                    <div className="mt-5 md:mt-0 flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        <span
+                          onClick={() => updateQty(product.id, -1)}
+                          className="w-10 h-10 bg-black text-white rounded-full flex justify-center items-center text-5xl pb-3 cursor-pointer"
+                        >
+                          -
+                        </span>
+
+                        <span className="w-10 h-10 border rounded-full flex justify-center items-center text-center text-2xl pb-1">
+                          {product.qty}
+                        </span>
+
+                        <span
+                          onClick={() => updateQty(product.id, 1)}
+                          className="w-10 h-10 bg-black text-white rounded-full flex justify-center items-center text-5xl pb-3 cursor-pointer"
+                        >
+                          +
+                        </span>
+                      </div>
+
+                      <div className="mt-5 md:mt-0">
+                        <button
+                          onClick={() => removeItem(product.id)}
+                          className="px-6 py-3 border hover:bg-secondary hover:border-transparent hover:text-white rounded-lg md:rounded-full uppercase cursor-pointer GolosText transition-all duration-300 whitespace-nowrap shrink-0"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                <Link href="/UI-Components/Pages/Checkout">
+                  <button className="btn w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl py-2 px-3 rounded-2xl">
+                    <i className="bi bi-cart4"></i> CheckOut
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
     </>
   )
 }
