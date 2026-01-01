@@ -175,6 +175,80 @@ const Checkout = () => {
               Place Order
             </button>
           </div>
+
+          {/* Right Side */}
+          <div className="lg:col-span-5">
+            <div className="border border-gray-300 p-4 rounded shadow-lg">
+              <h5 className="font-bold mb-3 items-center gap-1 text-2xl GolosText">
+                <i className="ri-shopping-cart-2-line text-secondary"></i> Order Summary
+              </h5>
+
+              {cartItems.length === 0 ? (
+                <p className="text-gray-500">Your cart is empty</p>
+              ) : (
+                <div className="flex flex-col gap-4">
+                  {cartItems.map((item) => {
+                    const qty = item.qty ?? 1;
+                    const price = parseFloat(item.price.replace("$", ""));
+
+                    return (
+                      <div key={item.id} className="flex gap-4 border-b border-gray-300 pb-4">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={120}
+                          height={120}
+                          className="rounded.lg w-24 h-24 object-cover"
+                        />
+
+                        <div className="flex-1">
+                          <h6 className="GolosText text-lg">
+                            {item.title}
+                          </h6>
+
+                          {item.off && <p className="text-sm">{item.off}</p>}
+
+                          <div className="flex justify-between GolosText mt-2">
+                            <span className="text-md">Qty: {qty}</span>
+                            <span className="font-bold text-lg">${(price * qty).toFixed(2)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
+
+              {/* Totals */}
+              <div className="text-sm pt-4 space-y-2">
+                <div className="flex justify-between">
+                  <span>Subtotal</span>
+                  <span className="GolosText">${totalPrice.toFixed(2)}</span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span>Shipping</span>
+                  <span>Free</span>
+                </div>
+
+                <div className="flex justify-between border-t border-gray-300 pt-2 text-lg font-bold">
+                  <span>Total</span>
+                  <span>${totalPrice.toFixed(2)}</span>
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <button className="mt-5 btn border w-full border-black cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                Place Order
+              </button>
+
+              <Link href="/UI-Components/Pages/Cart">
+                <button className="btn w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+                  Back to Cart
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

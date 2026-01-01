@@ -183,14 +183,14 @@ const BottomNav = () => {
         {/* Right Icons */}
         <div className="lg:flex items-center gap-3 xl:gap-5 hidden">
           <Link
-            href="/UI-components/Pages/Login"
+            href="/UI-Components/Pages/Login"
             className="login-link border-b border-gray-400 GolosText font-semibold hidden xl:block"
           >
             Login / Register
           </Link>
 
           <div className="flex items-center gap-6">
-            <Link href="/UI-components/Pages/Wishlist" className="relative">
+            <Link href="/UI-Components/Pages/Wishlist" className="relative">
               <i className="bi bi-balloon-heart text-3xl"></i>
               {wishlistCount > 0 && (
                 <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -199,7 +199,7 @@ const BottomNav = () => {
               )}
             </Link>
 
-            <Link href="/UI-components/Pages/Cart" className="relative">
+            <Link href="/UI-Components/Pages/Cart" className="relative">
               <i className="bi bi-cart3 text-3xl"></i>
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-2 bg-black text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
