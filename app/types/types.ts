@@ -15,3 +15,12 @@ export type CartType = {
   off?: string | undefined;
   qty: number;
 }
+
+export type CartItem = {
+  id: number;
+  title: string;
+  image: string;
+  price: string;
+  off?: string | undefined;
+  qty: number;
+}
