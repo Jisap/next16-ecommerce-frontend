@@ -177,7 +177,7 @@ const Checkout = () => {
           </div>
 
           {/* Right Side */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 mt-12">
             <div className="border border-gray-300 p-4 rounded shadow-lg">
               <h5 className="font-bold mb-3 items-center gap-1 text-2xl GolosText">
                 <i className="ri-shopping-cart-2-line text-secondary"></i> Order Summary
@@ -251,6 +251,10 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }
