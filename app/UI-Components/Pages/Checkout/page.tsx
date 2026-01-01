@@ -238,7 +238,7 @@ const Checkout = () => {
               </div>
 
               {/* Buttons */}
-              <button className="mt-5 btn border w-full border-black cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+              <button className="mt-5 btn border w-full border-black hover:bg-black hover:text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
                 Place Order
               </button>
 

@@ -28,7 +28,7 @@ const navLinks: NavLink[] = [
     label: "Blog",
     href: "/UI-Components/Blog",
     dropdown: [
-      { label: "Blog", href: "/UI-Components/Blogs" },
+      { label: "Blog", href: "/UI-Components/Blog" },
       { label: "Blog Details", href: "/UI-Components/Blog/7" },
     ]
   },
