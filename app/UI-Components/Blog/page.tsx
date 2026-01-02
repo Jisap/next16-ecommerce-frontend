@@ -29,6 +29,9 @@ const tags = [
 ]
 
 const Blog = () => {
+
+  const post = BlogsData.slice(4, 7)
+
   return (
     <>
       <PageHeader
@@ -75,6 +78,7 @@ const Blog = () => {
             </div>
           </div>
 
+          {/* Derecha */}
           <div className='w-full lg:w-1/2 sticky top-25 left-0 h-full'>
             <h2 className='lufga text-2xl font-medium'>
               Category
@@ -93,8 +97,29 @@ const Blog = () => {
                 </div>
               ))}
             </div>
-          </div>
 
+            <div className='mt-10'>
+              <h2 className='Lufga text-2xl font-medium mb-5'>
+                Latest Post
+              </h2>
+
+              <div className='flex flex-col gap-6'>
+                {post.map((post, index) => (
+                  <Link href={`/UI-Components/Blogs/${post.id}`} key={index} className='flex items-center gap-5 cursor-pointer'>
+                    <div className='w-1/3 rounded-xl overflow-hidden'>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={500}
+                        height={500}
+                        className='w-full h-full object-cover'
+                      />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
