@@ -74,6 +74,27 @@ const Blog = () => {
               ))}
             </div>
           </div>
+
+          <div className='w-full lg:w-1/2 sticky top-25 left-0 h-full'>
+            <h2 className='lufga text-2xl font-medium'>
+              Category
+            </h2>
+
+            <div className='flex flex-col mt-5 gap-2'>
+              {categories.map((category, index) => (
+                <div key={index} className='group flex items-center justify-between cursor-pointer'>
+                  <h2 className='text-lg GolosText flex items-center gap-2 group-hover:ps-2 transition-all duration-300 group-hover:text-secondary'>
+                    <i className="bi bi-arrow-right"></i> {category.name}
+                  </h2>
+
+                  <h3 className='group-hover:text-secondary transition-all duration-300'>
+                    ({category.count})
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </>
