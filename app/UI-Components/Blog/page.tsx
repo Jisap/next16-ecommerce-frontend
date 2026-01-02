@@ -115,7 +115,31 @@ const Blog = () => {
                         className='w-full h-full object-cover'
                       />
                     </div>
+
+                    <div className='flex flex-col'>
+                      <p className='GolosText text-sm text-gray-500'>
+                        {post.date}
+                      </p>
+
+                      <h3 className='GolosText text-lg font-semibold leading-snug hover:text-secondary transition-all duration-300'>
+                        {post.title}
+                      </h3>
+                    </div>
                   </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className='mt-10'>
+              <h2 className='Lufga text-2xl font-medium mb-5'>
+                Tags
+              </h2>
+
+              <div className='flex flex-wrap gap-3'>
+                {tags.map((tag, index) => (
+                  <span key={index} className='GolosText text-sm px-4 py-2 border rounded-md text-black hover:text-white hover:bg-black transition-all duration-300'>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
