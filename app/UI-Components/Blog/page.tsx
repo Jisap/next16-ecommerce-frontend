@@ -2,6 +2,8 @@ import PageHeader from '@/app/components/PageHeader'
 import Image from 'next/image'
 import Link from 'next/link'
 import BlogsData from '@/data/BlogsData.json';
+import Follow from '../Index/Follow/page';
+import { ToastContainer } from 'react-toastify';
 
 const categories = [
   { name: "Dresses", count: 10 },
@@ -146,6 +148,11 @@ const Blog = () => {
           </div>
         </div>
       </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
+
     </>
   )
 }
