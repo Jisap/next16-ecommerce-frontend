@@ -650,6 +650,36 @@ body {
 
 
 /* =========================
+   Blog
+   ========================= */
+
+
+.blog-card .blog-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card .blog-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.blog-card:hover .blog-img::after {
+  transition: left 0.7s ease-out;
+  left: 120%;
+}
+
+/* =========================
    Media Queries
    ========================= */
 
