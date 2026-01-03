@@ -72,6 +72,8 @@ const BlodDetails = () => {
 
       <div className="px-[8%] lg:px-[16%] py-30 pt-10">
         <div className="flex flex-col lg:flex-row justify-between gap-10">
+
+          {/* izquierda */}
           <div className="w-full lg:w-1/1">
             <h2 className="GolosText text-5xl font-semibold">{blog.title}</h2>
 
@@ -120,65 +122,66 @@ const BlodDetails = () => {
                   className="rounded-2xl flex-shrink-0 self-end sm:self-center"
                 />
               </div>
+            </div>
 
-              <p className="my-8 GolosText tracking-wide text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
-                recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
-                veritatis quaerat eaque, necessitatibus tenetur molestias doloremque aliquid rerum unde, autem neque sapiente aperiam sequi molestiae. Suscipit, porro!
-              </p>
+            <p className="my-8 GolosText tracking-wide text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
+              recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
+              veritatis quaerat eaque, necessitatibus tenetur molestias doloremque aliquid rerum unde, autem neque sapiente aperiam sequi molestiae. Suscipit, porro!
+            </p>
 
-              <div className="flex flex-col gap-5 mt-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {galleryImages.slice(0, 2).map((item) => (
-                    <Image
-                      key={item.id}
-                      src={item.img}
-                      alt="gallery"
-                      width={800}
-                      height={800}
-                      className="w-full h-full rounded-2xl"
-                    />
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                  {galleryImages.slice(3, 5).map((item) => (
-                    <Image
-                      key={item.id}
-                      src={item.img}
-                      alt="gallery"
-                      width={800}
-                      height={800}
-                      className="w-full h-full rounded-2xl"
-                    />
-                  ))}
-                </div>
+            <div className="flex flex-col gap-5 mt-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {galleryImages.slice(0, 2).map((item) => (
+                  <Image
+                    key={item.id}
+                    src={item.img}
+                    alt="gallery"
+                    width={800}
+                    height={800}
+                    className="w-full h-full rounded-2xl"
+                  />
+                ))}
               </div>
 
-              <p className="my-8 GolosText tracking-wide text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
-                recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
-                veritatis quaerat eaque, necessitatibus tenetur molestias doloremque aliquid rerum unde, autem neque sapiente aperiam sequi molestiae. Suscipit, porro!
-              </p>
-
-              <h2 className="GolosText text-2xl font-semibold">
-                Additional information
-              </h2>
-
-              <p className="mt-4 GolosText tracking-wide text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
-                recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
-              </p>
-
-              <p className="mt-4 GolosText tracking-wide text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
-                recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                {galleryImages.slice(3, 5).map((item) => (
+                  <Image
+                    key={item.id}
+                    src={item.img}
+                    alt="gallery"
+                    width={800}
+                    height={800}
+                    className="w-full h-full rounded-2xl"
+                  />
+                ))}
+              </div>
             </div>
+
+            <p className="my-8 GolosText tracking-wide text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
+              recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
+              veritatis quaerat eaque, necessitatibus tenetur molestias doloremque aliquid rerum unde, autem neque sapiente aperiam sequi molestiae. Suscipit, porro!
+            </p>
+
+            <h2 className="GolosText text-2xl font-semibold">
+              Additional information
+            </h2>
+
+            <p className="mt-4 GolosText tracking-wide text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
+              recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
+            </p>
+
+            <p className="mt-4 GolosText tracking-wide text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quae inventore voluptates ducimus ullam odit, culpa suscipit officiis non ad beatae? Molestiae minima placeat dolores doloribus
+              recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
+            </p>
+
           </div>
 
           {/* derecha */}
