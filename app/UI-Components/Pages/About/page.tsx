@@ -13,7 +13,7 @@ import aboutImg6 from '@/public/assets/about-6.webp'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import "swiper/css"
-import test from 'node:test'
+import CountUp from 'react-countup'
 
 const testimonials = [
   {
@@ -34,7 +34,7 @@ const testimonials = [
     id: 3,
     text: "The attention to detail in Fashique's clothing is what sets them apart. You can tell that each piece is made with care. I love that I can find unique items that I won't see everywhere else.",
     img: aboutImg3,
-    name: "Emily Rodriguez",
+    name: "John Rodriguez",
     role: "Graphic Designer"
   },
   {
@@ -188,20 +188,36 @@ const About = () => {
             <div className='about-section flex gap-25'>
               <div className='about-heading'>
                 <h2 className='GolosText font-bold text-black text-7xl'>
-                  50+
+                  <CountUp
+                    start={0}
+                    end={50}
+                    duration={2.5}
+                    enableScrollSpy
+                    scrollSpyOnce
+                  >
+                    {({ countUpRef }) => <span ref={countUpRef} />}
+                  </CountUp>+
                 </h2>
 
-                <span className='text-lack text-xl font-semibold'>
+                <span className='text-black text-xl font-semibold'>
                   Items Sale
                 </span>
               </div>
 
               <div className='about-heading'>
                 <h2 className='GolosText font-bold text-black text-7xl'>
-                  400%
+                  <CountUp
+                    start={0}
+                    end={400}
+                    duration={2.5}
+                    enableScrollSpy
+                    scrollSpyOnce
+                  >
+                    {({ countUpRef }) => <span ref={countUpRef} />}
+                  </CountUp>%
                 </h2>
 
-                <span className='text-lack text-xl font-semibold'>
+                <span className='text-black text-xl font-semibold'>
                   Return On Investment
                 </span>
               </div>
