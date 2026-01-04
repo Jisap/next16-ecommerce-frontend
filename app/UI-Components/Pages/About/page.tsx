@@ -8,8 +8,43 @@ import aboutImg1 from '@/public/assets/about-1.webp'
 import aboutImg2 from '@/public/assets/about-2.webp'
 import aboutImg3 from '@/public/assets/about-3.webp'
 import aboutImg4 from '@/public/assets/about-4.webp'
+import aboutImg5 from '@/public/assets/about-5.webp'
+import aboutImg6 from '@/public/assets/about-6.webp'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import "swiper/css"
+import test from 'node:test'
 
-
+const testimonials = [
+  {
+    id: 1,
+    text: "Fashique has completely transformed my wardrobe. The quality of the clothes is exceptional, and the styles are always on-trend. I receive so many compliments whenever I wear their pieces. Highly recommended!",
+    img: aboutImg1,
+    name: "Jessica Miller",
+    role: "Fashion Blogger"
+  },
+  {
+    id: 2,
+    text: "I'm so impressed with the customer service at Fashique. They were so helpful when I had a question about my order. The shipping was fast, and the packaging was beautiful. I'll definitely be a returning customer.",
+    img: aboutImg2,
+    name: "Sarah Chen",
+    role: "Marketing Manager"
+  },
+  {
+    id: 3,
+    text: "The attention to detail in Fashique's clothing is what sets them apart. You can tell that each piece is made with care. I love that I can find unique items that I won't see everywhere else.",
+    img: aboutImg3,
+    name: "Emily Rodriguez",
+    role: "Graphic Designer"
+  },
+  {
+    id: 4,
+    text: "As someone who values sustainability, I appreciate Fashique's commitment to ethical practices. It feels good to support a brand that aligns with my values. Plus, the clothes are gorgeous!",
+    img: aboutImg4,
+    name: "Olivia Martinez",
+    role: "Environmental Scientist"
+  }
+]
 
 const faqData = [
   {
@@ -149,7 +184,94 @@ const About = () => {
         </div>
 
         <div className='flex flex-col lg:flex-row lg:gap-8 py-6'>
+          <div className='w-full lg:w-1/2'>
+            <div className='about-section flex gap-25'>
+              <div className='about-heading'>
+                <h2 className='GolosText font-bold text-black text-7xl'>
+                  50+
+                </h2>
 
+                <span className='text-lack text-xl font-semibold'>
+                  Items Sale
+                </span>
+              </div>
+
+              <div className='about-heading'>
+                <h2 className='GolosText font-bold text-black text-7xl'>
+                  400%
+                </h2>
+
+                <span className='text-lack text-xl font-semibold'>
+                  Return On Investment
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className='w-full lg:w-1/2'>
+            <div>
+              <Image
+                src={aboutImg5}
+                alt="about"
+                className='rounded-2xl'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='px-[8%] lg:px-[16%] py-20 pb-20 bg-[#ffedd4]'>
+        <div className='flex flex-col-reverse lg:flex-row items-center gap-8'>
+          <div className='w-full lg:w-1/2 testi-img relative'>
+            <Image
+              src={aboutImg6}
+              alt="about"
+              className='rounded-2xl w-full h-full object-cover'
+            />
+          </div>
+
+          <div className='w-full lg:w-1/2'>
+            <h2 className='GolosText text-3xl md:text-6xl font-bold mb-5'>
+              Whar Our Clients Say About Us
+            </h2>
+
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
+            >
+              {testimonials.map((testimonial) => (
+                <SwiperSlide key={testimonial.id}>
+                  <div className='testi-card bg-white rounded-2xl p-8'>
+                    <p className='text-black text-md mb-5'>{testimonial.text}</p>
+
+                    <div className='testi-author flex items-center gap-5'>
+                      <Image
+                        src={testimonial.img}
+                        alt="testimonial"
+                        className='rounded-full w-20'
+                      />
+
+                      <div className='about-text'>
+                        <h2 className='Lufga text-2xl text-black font-bold'>
+                          {testimonial.name}
+                        </h2>
+
+                        <span className='text-gray-500'>
+                          {testimonial.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
 
