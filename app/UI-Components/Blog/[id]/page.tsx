@@ -11,6 +11,8 @@ import gallery2 from "@/public/assets/blog-gallery-2.webp"
 import gallery3 from "@/public/assets/blog-gallery-3.webp"
 import gallery4 from "@/public/assets/blog-gallery-4.webp"
 import gallery5 from "@/public/assets/blog-gallery-5.webp"
+import Follow from "../../Index/Follow/page"
+import { ToastContainer } from "react-toastify"
 
 const categories = [
   { name: "Dresses", count: 10 },
@@ -252,6 +254,11 @@ const BlodDetails = () => {
           </div>
         </div>
       </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
+
     </>
   )
 }
