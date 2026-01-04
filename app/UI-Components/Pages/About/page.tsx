@@ -10,6 +10,7 @@ import aboutImg3 from '@/public/assets/about-3.webp'
 import aboutImg4 from '@/public/assets/about-4.webp'
 import aboutImg5 from '@/public/assets/about-5.webp'
 import aboutImg6 from '@/public/assets/about-6.webp'
+import quote from '@/public/assets/quote.png'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import "swiper/css"
@@ -183,6 +184,7 @@ const About = () => {
           </div>
         </div>
 
+        {/* Countup */}
         <div className='flex flex-col lg:flex-row lg:gap-8 py-6'>
           <div className='w-full lg:w-1/2'>
             <div className='about-section flex gap-25'>
@@ -236,6 +238,7 @@ const About = () => {
         </div>
       </div>
 
+      {/* testimonial */}
       <div className='px-[8%] lg:px-[16%] py-20 pb-20 bg-[#ffedd4]'>
         <div className='flex flex-col-reverse lg:flex-row items-center gap-8'>
           <div className='w-full lg:w-1/2 testi-img relative'>
@@ -282,6 +285,12 @@ const About = () => {
                           {testimonial.role}
                         </span>
                       </div>
+
+                      <Image
+                        src={quote}
+                        alt="quote"
+                        className='ml-auto w-12 h-12 object-contain'
+                      />
                     </div>
                   </div>
                 </SwiperSlide>
