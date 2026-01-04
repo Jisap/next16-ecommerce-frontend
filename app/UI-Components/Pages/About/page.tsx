@@ -251,7 +251,7 @@ const About = () => {
 
           <div className='w-full lg:w-1/2'>
             <h2 className='GolosText text-3xl md:text-6xl font-bold mb-5'>
-              Whar Our Clients Say About Us
+              What Our Clients Say About Us
             </h2>
 
             <Swiper

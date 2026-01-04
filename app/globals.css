@@ -680,6 +680,30 @@ body {
 }
 
 /* =========================
+   About
+   ========================= */
+
+.testi-img {
+  z-index: 1;
+}
+
+.testi-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -14%;
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(90deg,
+      #fffaf3 1.69%,
+      rgba(255, 250, 243, 0) 103.98%,
+    );
+  border-radius: 50% 50% 0 0;
+  z-index: -1;
+}
+
+
+/* =========================
    Media Queries
    ========================= */
 
