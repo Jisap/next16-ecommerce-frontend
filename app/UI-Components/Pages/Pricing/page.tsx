@@ -34,6 +34,40 @@ const Pricing = () => {
             <button className='btn border w-full border-black cursor-pointer hover:bg-black hover:text-white transition-all duration-300 GolosText text-xl px-4 py-1 rounded-md'>
               Try For Free
             </button>
+
+            <div className='pricing-list py-8'>
+              <h4 className='text-black mb-5 GolosText font-semibold'>
+                Key Features:
+              </h4>
+
+              <ul className='list-item'>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill'></i> Access to all features
+                </li>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill'></i> Assited onboarding support
+                </li>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill'></i> CPM Overage: Unlimited
+                </li>
+
+              </ul>
+
+              <ul className='list-item opacity-50'>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill text-secondary'></i> Program reviews 1x a month
+                </li>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill text-secondary'></i> CPM Overage: Unlimited
+                </li>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill text-secondary'></i> Assited onboarding support
+                </li>
+                <li className='flex gap-3 GolosText mb-3'>
+                  <i className='bi bi-check-circle-fill text-secondary'></i> CPM Overage: Unlimited
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
