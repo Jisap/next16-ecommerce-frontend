@@ -1,5 +1,7 @@
 import PageHeader from '@/app/components/PageHeader'
 import React from 'react'
+import Follow from '../../Index/Follow/page';
+import { ToastContainer } from 'react-toastify';
 
 // Data for pricing plans
 const pricingPlans = [
@@ -137,6 +139,29 @@ const Pricing = () => {
           ))}
         </div>
       </div>
+
+      <div className='px-[8%] lg:px-[16%] py-10'>
+        <div className='pricing-box bg-black gap-5 flex items-center justify-between text-white rounded-xl px-5 md:px-20 py-5 flex-wrap'>
+          <div className='pricing-content flex flex-wrap items-center gap-2 lg:gap-6'>
+            <h2 className='text-2xl Lufga'>
+              Questions ?
+            </h2>
+
+            <p className='text-lg GolosText'>
+              Our experts will help find the grar that's right for you
+            </p>
+          </div>
+
+          <button className='btn border cursor-pointer text-black bg-white transition-all duration-300 text-xl px-6 py-3 rounded-md GolosText'>
+            Get in touch
+          </button>
+        </div>
+      </div>
+
+      <Follow />
+
+      <ToastContainer position="top-right" autoClose={1500} />
+
     </>
   )
 }
