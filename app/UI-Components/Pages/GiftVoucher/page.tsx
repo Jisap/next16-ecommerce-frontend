@@ -8,7 +8,7 @@ import Voucher4 from "@/public/assets/Voucher-4.webp"
 import Voucher5 from "@/public/assets/Voucher-5.webp"
 import Voucher6 from "@/public/assets/Voucher-6.webp"
 import Follow from '../../Index/Follow/page'
-import { ToastContainer } from 'react-toastify'
+
 
 const VouchersData = [
   {
@@ -87,8 +87,6 @@ const Vouchers = () => {
       </div>
 
       <Follow />
-
-      <ToastContainer position="top-right" autoClose={1500} />
     </>
   )
 }
