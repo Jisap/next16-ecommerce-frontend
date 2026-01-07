@@ -15,7 +15,7 @@ const Login = () => {
         <div className='flex flex-col lg:flex-row'>
           {/* izquierda */}
           <div className='w-full lg:w-1/2 hidden lg:block bg-[#ffedd4]'>
-            <div className='absolute top-30 lg:top-50 left-10 z-10'>
+            <div className='absolute top-20 lg:top-40 left-10 z-10'>
               <h2 className='text-black text-4xl GolosText font-semibold'>
                 Login
               </h2>
