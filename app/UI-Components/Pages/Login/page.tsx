@@ -1,8 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import loginImg from '@/public/assets/login-img.webp'
+import { useState } from 'react'
 
 const Login = () => {
+
+  const [showPassword, setShowPassword] = useState(false)
+
   return (
     <>
       <div>
@@ -41,6 +47,35 @@ const Login = () => {
                 <h2 className='text-3xl Lufga font-bold text-center mb-3'>
                   Login
                 </h2>
+
+                <p className='text-gray-500 text-center mb-6'>
+                  Welcome please login to your account
+                </p>
+
+                <div className='space-y-5'>
+                  <div className='email-details'>
+                    <label className='Lufga'>Email Address</label>
+                    <input type="email" placeholder='Enter your email' className='w-full px-4 py-3 border border-black bg-white hover:border-secondary rounded-lg focus:outline-none' />
+                  </div>
+
+                  <div className='password-details'>
+                    <label className='Lufga'>Password</label>
+                    <div className='relative'>
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        placeholder='Enter your password'
+                        className='w-full px-4 py-3 border border-black bg-white hover:border-secondary rounded-lg focus:outline-none'
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-secondary'
+                      >
+                        <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'} text-xl`}></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
