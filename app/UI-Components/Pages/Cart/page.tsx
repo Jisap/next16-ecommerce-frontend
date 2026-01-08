@@ -1,5 +1,4 @@
 "use client"
-
 import PageHeader from "@/app/components/PageHeader"
 import { CartType, ProductType } from "@/app/types/types"
 import { addToCart } from "@/app/utils"
@@ -11,6 +10,8 @@ import "react-toastify/dist/ReactToastify.css"
 import Follow from "../../Index/Follow/page"
 import returnPolicy from "@/public/assets/boat.png"
 import packBox from "@/public/assets/pack-box.png"
+import { motion } from 'framer-motion'
+import { slideUp, staggerContainer, viewportConfig } from '@/app/lib/animations'
 
 
 const Cart = () => {
@@ -60,7 +61,7 @@ const Cart = () => {
         parentLink="/UI-Components/Shop"
       />
 
-      <div className="px-[8%] lg:px-[12%] py-20">
+      <div className="px-[8%] lg:px-[12%] py-20 overflow-hidden">
         {cart.length === 0 ? (
           <p className="text-2xl text-secondary GolosText border border-gray-400 px-5 py-2 rounded-full">
             Your Cart is empty
@@ -68,12 +69,19 @@ const Cart = () => {
         ) : (
           <div className="flex flex-col lg:flex-row gap-10 justify-between">
             {/* cart content */}
-            <div className="w-full lg:w-1/1">
+            <motion.div
+              className="w-full lg:w-1/1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              variants={staggerContainer}
+            >
               <div className="flex flex-col gap-10">
                 {cart.map((product) => (
-                  <div
+                  <motion.div
                     key={product.id}
                     className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-400 pb-8"
+                    variants={slideUp}
                   >
                     {/* Img + title + price */}
                     <div className="flex items-center gap-5">
@@ -126,19 +134,28 @@ const Cart = () => {
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
 
                 <Link href="/UI-Components/Pages/Checkout">
-                  <button className="btn w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl py-2 px-3 rounded-2xl">
+                  <motion.button
+                    className="btn w-full mt-3 bg-black text-white cursor-pointer GolosText text-xl py-2 px-3 rounded-2xl"
+                    variants={slideUp}
+                  >
                     <i className="bi bi-cart4"></i> CheckOut
-                  </button>
+                  </motion.button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Stiky content */}
-            <div className="w-full lg:w-1/2 sticky top-25 left-0 h-full">
+            <motion.div
+              className="w-full lg:w-1/2 sticky top-25 left-0 h-full"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              variants={slideUp}
+            >
               <div className="border rounded-2xl p-4">
                 <button className="btn border w-full border-black cursor-pointer hover:bg-black hover:text-white GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
                   Bank Offer 5% Cashback
@@ -213,7 +230,7 @@ const Cart = () => {
                   </button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         )}
       </div>

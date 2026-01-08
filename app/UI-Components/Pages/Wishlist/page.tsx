@@ -1,5 +1,4 @@
 "use client"
-
 import PageHeader from "@/app/components/PageHeader"
 import { ProductType } from "@/app/types/types"
 import { addToCart } from "@/app/utils"
@@ -9,6 +8,8 @@ import { useEffect, useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Follow from "../../Index/Follow/page"
+import { motion } from 'framer-motion'
+import { slideUp, staggerContainer, viewportConfig } from '@/app/lib/animations'
 
 
 const Wishlist = () => {
@@ -38,17 +39,24 @@ const Wishlist = () => {
         parentLink="/UI-Components/Shop"
       />
 
-      <div className="px-[8%] lg:px-[20%] py-20">
+      <div className="px-[8%] lg:px-[20%] py-20 overflow-hidden">
         {wishlist.length === 0 ? (
           <p className="text-2xl text-secondary GolosText border border-gray-400 px-5 py-2 rounded-full">
             Your wishlist is empty
           </p>
         ) : (
-          <div className="flex flex-col gap-10">
+          <motion.div
+            className="flex flex-col gap-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            variants={staggerContainer}
+          >
             {wishlist.map((product) => (
-              <div
+              <motion.div
                 key={product.id}
                 className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-gray-400 pb-8 flex-wrap gap-5"
+                variants={slideUp}
               >
                 <div className="flex items-center gap-5">
                   <Image
@@ -90,16 +98,19 @@ const Wishlist = () => {
                     Remove
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             <Link href="/UI-Components/Pages/Cart">
-              <button className="btn mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300">
+              <motion.button
+                className="btn mt-3 bg-black text-white cursor-pointer GolosText text-xl px-6 py-3 rounded-md transition-all duration-300"
+                variants={slideUp}
+              >
                 <i className="bi bi-cart3 mr-3"></i>
                 View Cart
-              </button>
+              </motion.button>
             </Link>
-          </div>
+          </motion.div>
         )}
       </div>
 
