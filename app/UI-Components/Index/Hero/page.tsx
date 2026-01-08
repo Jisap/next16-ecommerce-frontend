@@ -12,16 +12,26 @@ import Herotest3 from "@/public/assets/hero-test3.webp"
 
 
 
+import { motion } from "framer-motion"
+import { slideUp, slideRight, viewportConfig } from "@/app/lib/animations"
+
+
 const Hero = () => {
   return (
     <>
-      <div className="px-[8%] lg:px-[10%] lg:ps-[16%] py-10">
+      <div className="px-[8%] lg:px-[10%] lg:ps-[16%] py-10 overflow-hidden">
         <div className="flex flex-col lg:flex-row gap-5 justify-between items-center relative">
 
           <div className="hero-shape3"></div>
           <div className="hero-shape4"></div>
 
-          <div className="w-full lg:w-1/2">
+          <motion.div
+            className="w-full lg:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            variants={slideUp}
+          >
             <div className="hero-content">
               <h1 className="GolosText text-6xl md:text-8xl lg:text-[6rem] font-semibold">
                 Your Ultimate
@@ -60,9 +70,15 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full lg:w-1/2">
+          <motion.div
+            className="w-full lg:w-1/2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            variants={slideRight}
+          >
             <div className="hero-image">
               <div className="hero-shape1"></div>
               <div className="hero-shape2"></div>
@@ -128,7 +144,7 @@ const Hero = () => {
                 className="w-full md:w-[80%] lg:w-[80%]"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

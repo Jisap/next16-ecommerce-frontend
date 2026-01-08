@@ -11,6 +11,9 @@ import "@splidejs/react-splide/css";
 
 
 
+import { motion } from "framer-motion"
+import { scaleUp, viewportConfig } from "@/app/lib/animations"
+
 const Banner = () => {
 
   const categories = [
@@ -25,7 +28,12 @@ const Banner = () => {
   return (
     <>
       <div className='banner relative'>
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={scaleUp}
+        >
           <Image
             src={circleText}
             alt="Circle Text"
@@ -41,7 +49,7 @@ const Banner = () => {
             height={100}
             className="banner-play-img"
           />
-        </div>
+        </motion.div>
 
         <div className="w-full overflow-hidden splide-slide-texts">
           <Splide

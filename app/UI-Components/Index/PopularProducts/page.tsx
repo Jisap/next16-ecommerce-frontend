@@ -11,6 +11,10 @@ import PopularProductCard from "@/app/components/Product-Card"
 import { addToCart, addToWishlist } from "@/app/utils"
 
 
+import { motion } from "framer-motion"
+import { slideUp, staggerContainer, viewportConfig } from "@/app/lib/animations"
+
+
 const PopularProducts = () => {
 
   const containerRef = useRef(null);
@@ -34,7 +38,13 @@ const PopularProducts = () => {
   return (
     <>
       <div className='px-[8%] lg:px-[16%] py-20 mt-20'>
-        <div className='flex flex-col md:flex-row justify-between gap-5'>
+        <motion.div
+          className='flex flex-col md:flex-row justify-between gap-5'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={slideUp}
+        >
           <div>
             <h2 className='text-5xl font-medium Lufga'>
               Most Popular Products
@@ -60,75 +70,33 @@ const PopularProducts = () => {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         <div className="mt-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10" ref={containerRef}>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"
+            ref={containerRef}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            variants={staggerContainer}
+          >
             {ProductData.map((product) => {
               return (
-                <div
+                <motion.div
                   key={product.id}
                   className={`mix ${product.cate} relative product-card popular-product cursor-pointer`}
+                  variants={slideUp}
                 >
-                  {/* <div className="product-card cursor-pointer relative">
-                    <div className="popular-product-image-wrapper relative">
-                      <div className="product-image rounded-2xl relative overflow-hidden">
-                        <Image
-                          src={product.image}
-                          alt={product.title}
-                          width={500}
-                          height={500}
-                          className="w-full h-full object-cover rounded-2xl"
-                        />
-
-                        <span className="absolute top-3 left-3 px-4 py-1 GolosText bg-white rounded-full z-10">
-                          {product.off}
-                        </span>
-
-                        <div className="absolute top-5 right-5 flex flex-col gap-2 z-10">
-                          <i
-                            onClick={() => addToWishlist(product)}
-                            className="bi bi-balloon-heart product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
-                          ></i>
-                          <i
-                            onClick={() => addToCart(product)}
-                            className="bi bi-cart3 product-icon w-10 h-10 flex items-center justify-center text-white bg-black/40 cursor-pointer rounded-full"
-                          ></i>
-                        </div>
-                      </div>
-
-                      <div className="popular-product-btn-wrapper">
-                        <Link href={`/UI-Components/Shop/${product.id}`}>
-                          <button className="btn bg-black text-white cursor-pointer GolosText text-sm lg:text-base xl:text-lg 2xl:text-xl px-6 py-2.5 lg:py-3 rounded-2xl w-full lg:w-auto lg:rounded-full border-3 border-white">
-                            View Details
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-
-                    <Link href={`/UI-Components/Shop/${product.id}`}>
-                      <div className="product-content mt-5 md:mt-10 z-10">
-                        <div className="flex justify-between">
-                          <h2 className="Lufga font-medium text-xl pr-5">
-                            {product.title}
-                          </h2>
-
-                          <h3 className="GolosText font-semibold text-2xl">
-                            {product.price}
-                          </h3>
-                        </div>
-                      </div>
-                    </Link>
-                  </div> */}
                   <PopularProductCard
                     product={product}
                     addToWishlist={addToWishlist}
                     addToCart={addToCart}
                   />
-                </div>
+                </motion.div>
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
 

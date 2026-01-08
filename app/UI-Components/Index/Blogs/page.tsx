@@ -3,11 +3,20 @@
 import BlogsData from "@/data/BlogsData.json"
 import Image from "next/image"
 
+import { motion } from "framer-motion"
+import { slideUp, staggerContainer, viewportConfig } from "@/app/lib/animations"
+
 const Blogs = () => {
   return (
     <>
       <div className='px-[8%] lg:px-[16%] py-20'>
-        <div className='flex flex-col md:flex-row justify-between gap-5'>
+        <motion.div
+          className='flex flex-col md:flex-row justify-between gap-5'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={slideUp}
+        >
           <div>
             <h2 className='text-5xl font-medium Lufga'>
               Latest Posts
@@ -23,12 +32,18 @@ const Blogs = () => {
               View All
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="idx-blog-wrap grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10">
+        <motion.div
+          className="idx-blog-wrap grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           {
             BlogsData.slice(0, 4).map((blog, index) => (
-              <div key={index} className="idx-blog-item">
+              <motion.div key={index} className="idx-blog-item" variants={slideUp}>
                 <div className="bg-white p-7 flex flex-col md:flex-row justify-between gap-5 rounded-2xl shadow-2xl/5">
                   <div className="w-full lg:w-1/2">
                     <div
@@ -60,10 +75,10 @@ const Blogs = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))
           }
-        </div>
+        </motion.div>
       </div>
     </>
   )

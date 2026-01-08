@@ -1,4 +1,4 @@
-
+"use client"
 
 import Image from "next/image"
 import insta1 from "@/public/assets/insta-1.webp"
@@ -10,24 +10,40 @@ import insta6 from "@/public/assets/insta-6.webp"
 import instaFollow from "@/public/assets/insta-follow.webp"
 
 
+import { motion } from "framer-motion"
+import { slideUp, staggerContainer, fadeIn, viewportConfig } from "@/app/lib/animations"
+
+
 const instaImage = [insta1, insta2, insta3, insta4, insta5, insta6]
 
 const Follow = () => {
   return (
     <>
-      <div className="follow">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+      <div className="follow overflow-hidden">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           {instaImage.map((insta, idx) => (
-            <div key={idx} className="follow-img">
+            <motion.div key={idx} className="follow-img" variants={fadeIn}>
               <Image
                 src={insta}
                 alt="insta-images"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="follow-text flex items-center gap-4 bg-white p-3 rounded-2xl">
+        <motion.div
+          className="follow-text flex items-center gap-4 bg-white p-3 rounded-2xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={slideUp}
+        >
           <Image
             src={instaFollow}
             alt="insta-follow"
@@ -39,7 +55,7 @@ const Follow = () => {
           <h2 className="GolosText font-semibold text-xl z-5">
             Follow @Fashique
           </h2>
-        </div>
+        </motion.div>
       </div>
     </>
   )

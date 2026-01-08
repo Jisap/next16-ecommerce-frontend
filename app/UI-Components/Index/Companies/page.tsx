@@ -17,6 +17,9 @@ import "@splidejs/react-splide/css";
 
 
 
+import { motion } from "framer-motion"
+import { slideUp, fadeIn, viewportConfig } from "@/app/lib/animations"
+
 const Companys = [
   company1,
   company2,
@@ -33,7 +36,13 @@ const Companies = () => {
   return (
     <>
       <div className='px-[8%] py-20 pt-30'>
-        <div className="companies-banner py-20">
+        <motion.div
+          className="companies-banner py-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={slideUp}
+        >
           <div className="company-shape hidden lg:block">
             <Image
               src={bannerCircle}
@@ -58,7 +67,10 @@ const Companies = () => {
             </h1>
           </div>
 
-          <div className="w-full md:mt-20 mt-10 overflow-hidden">
+          <motion.div
+            className="w-full md:mt-20 mt-10 overflow-hidden"
+            variants={fadeIn}
+          >
             <Splide
               options={{
                 type: "loop",
@@ -90,9 +102,12 @@ const Companies = () => {
                 </SplideSlide>
               ))}
             </Splide>
-          </div>
+          </motion.div>
 
-          <div className="w-full mt-10 overflow-hidden">
+          <motion.div
+            className="w-full mt-10 overflow-hidden"
+            variants={fadeIn}
+          >
             <Splide
               options={{
                 type: "loop",
@@ -124,8 +139,8 @@ const Companies = () => {
                 </SplideSlide>
               ))}
             </Splide>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   )
