@@ -702,7 +702,15 @@ body {
   z-index: -1;
 }
 
-
+/* .contact-form {
+  position: absolute;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 10px;
+  overflow: hidden;
+} */
 
 /* =========================
    Media Queries
@@ -744,7 +752,11 @@ body {
     background-position: center center;
   }
 
-
+  /* .contact-form {
+    position: static;
+    top: 0;
+    left: 0;
+  } */
 }
 
 @media (max-width: 575px) {
