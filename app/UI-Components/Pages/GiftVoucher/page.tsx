@@ -1,14 +1,16 @@
+"use client"
 import PageHeader from '@/app/components/PageHeader'
 import Image from 'next/image'
-import Link from 'next/link'
+import Follow from '../../Index/Follow/page'
+import { motion } from 'framer-motion'
+import { slideUp, staggerContainer, viewportConfig } from '@/app/lib/animations'
+
 import Voucher1 from "@/public/assets/Voucher-1.webp"
 import Voucher2 from "@/public/assets/Voucher-2.webp"
 import Voucher3 from "@/public/assets/Voucher-3.webp"
 import Voucher4 from "@/public/assets/Voucher-4.webp"
 import Voucher5 from "@/public/assets/Voucher-5.webp"
 import Voucher6 from "@/public/assets/Voucher-6.webp"
-import Follow from '../../Index/Follow/page'
-
 
 const VouchersData = [
   {
@@ -49,7 +51,6 @@ const VouchersData = [
   },
 ]
 
-
 const Vouchers = () => {
   return (
     <>
@@ -58,16 +59,26 @@ const Vouchers = () => {
         currentPage="Our Gift Vouchers"
       />
 
-      <div className='px-[8%] lg:px-[16%] py-20'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+      <div className='px-[8%] lg:px-[16%] py-20 overflow-hidden'>
+        <motion.div
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           {VouchersData.map((voucher, index) => (
-            <div key={index} className='bg-white rounded-xl p-5'>
+            <motion.div
+              key={index}
+              className='bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300'
+              variants={slideUp}
+            >
               <div className='flex flex-col mb-4'>
-                <div>
+                <div className='overflow-hidden rounded-2xl'>
                   <Image
                     src={voucher.image}
                     alt={voucher.title}
-                    className='w-full h-full rounded-2xl'
+                    className='w-full h-full object-cover hover:scale-105 transition-transform duration-500'
                   />
                 </div>
 
@@ -76,14 +87,14 @@ const Vouchers = () => {
                     {voucher.title}
                   </h2>
 
-                  <p className='mt-3 tracking-wider'>
+                  <p className='mt-3 tracking-wider text-gray-600'>
                     {voucher.info}
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <Follow />

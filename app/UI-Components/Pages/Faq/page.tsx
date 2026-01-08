@@ -1,11 +1,12 @@
 'use client'
 
-
 import PageHeader from '@/app/components/PageHeader'
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import faqImg from '@/public/assets/faq-img.webp'
+import { motion } from 'framer-motion'
+import { slideUp, slideLeft, staggerContainer, viewportConfig } from '@/app/lib/animations'
 
 const faqData = [
   {
@@ -34,7 +35,6 @@ const faqData = [
   }
 ];
 
-
 const Faqs = () => {
 
   const [openIndex, setOpenIndex] = useState<number | null>(null)
@@ -50,9 +50,15 @@ const Faqs = () => {
     <>
       <PageHeader title="FAQ" currentPage="FAQ" />
 
-      <div className='flex flex-col lg:flex-row justify-between items-center h-full lg:h-[70vh] gap-5'>
-        <div className='w-full lg:w-1/2 flex justify-center items-center bg-[#ffedd4] h-full py-10 lg:py-0 ps-[8%] lg:px-[8%] pe-10'>
-          <div className=''>
+      <div className='flex flex-col lg:flex-row justify-between items-center h-full lg:min-h-[70vh] gap-5 overflow-hidden'>
+        <motion.div
+          className='w-full lg:w-1/2 flex justify-center items-center bg-[#ffedd4] h-full py-10 lg:py-20 ps-[8%] lg:px-[8%] pe-10'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={slideLeft}
+        >
+          <div className='w-full'>
             <h2 className='text-4xl GolosText'>Have any questions?</h2>
 
             <div className='flex text-2xl items-center'>
@@ -61,62 +67,62 @@ const Faqs = () => {
               <span>Faq's</span>
             </div>
 
-            <div className='my-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-box text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>General</h2>
-              </div>
+            <motion.div
+              className='my-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              variants={staggerContainer}
+            >
+              {[
+                { icon: 'box', label: 'General' },
+                { icon: 'cart3', label: 'Returns' },
+                { icon: 'gift', label: 'Gifts' },
+                { icon: 'currency-dollar', label: 'Refunds' },
+                { icon: 'credit-card', label: 'Payments' },
+                { icon: 'truck', label: 'Shipping' }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  className='border border-black/10 hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3 bg-white/50'
+                  variants={slideUp}
+                >
+                  <i className={`bi bi-${item.icon} text-2xl text-black`}></i>
+                  <h2 className='text-2xl GolosText'>{item.label}</h2>
+                </motion.div>
+              ))}
+            </motion.div>
 
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-cart3 text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>Returns</h2>
-              </div>
-
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-gift text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>Gifts</h2>
-              </div>
-
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-currency-dollar text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>Refunds</h2>
-              </div>
-
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-credit-card text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>Payments</h2>
-              </div>
-
-              <div className='border hover:border-secondary cursor-pointer hover:text-secondary transition-all rounded-md py-2 px-4 flex items-center justify-center gap-3'>
-                <i className='bi bi-truck text-2xl text-black'></i>
-                <h2 className='text-2xl GolosText'>Shipping</h2>
-              </div>
-            </div>
-
-            <div className='mt-5'>
+            <motion.div className='mt-5' variants={slideUp}>
               <Image
                 src={faqImg}
                 alt="faq-img"
-                className='w-full h-full rounded-2xl'
+                className='w-full h-auto rounded-2xl shadow-lg'
               />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="space-y-1 w-full lg:w-1/2 py-10 px-5 lg:px-[8%]">
+        <motion.div
+          className="space-y-4 w-full lg:w-1/2 py-10 px-5 lg:px-[8%]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           {faqData.map((faq, index) => (
-            <div key={index} className="">
+            <motion.div key={index} variants={slideUp}>
               {/* button = question + icon */}
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left py-4 flex justify-between items-center focus:outline-none GolosText border border-black rounded-lg px-6"
+                className={`w-full text-left py-4 flex justify-between items-center focus:outline-none GolosText border rounded-lg px-6 transition-all duration-300 ${openIndex === index ? 'border-secondary' : 'border-black'}`}
               >
-                <span className="text-xl GolosText font-semibold hover:text-secondary transition-all duration-300">
+                <span className={`text-xl GolosText font-semibold transition-all duration-300 ${openIndex === index ? 'text-secondary' : 'hover:text-secondary'}`}>
                   {faq.question}
                 </span>
                 <i className={`
                       bi bi-chevron-down transform transition-transform text-black
-                      ${openIndex === index ? 'rotate-180' : ''}`}
+                      ${openIndex === index ? 'rotate-180 text-secondary' : ''}`}
                 ></i>
               </button>
 
@@ -129,9 +135,9 @@ const Faqs = () => {
               >
                 <p className="text-black pb-4 GolosText">{faq.answer}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   )
