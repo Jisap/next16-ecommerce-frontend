@@ -15,6 +15,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import "swiper/css"
 import CountUp from 'react-countup'
+import { motion } from 'framer-motion'
+import { slideUp, fadeIn, slideLeft, slideRight, staggerContainer, viewportConfig } from '@/app/lib/animations'
 
 const testimonials = [
   {
@@ -92,9 +94,15 @@ const About = () => {
         currentPage="About"
       />
 
-      <div className='px-[8%] lg:px-[16%] py-20'>
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className='w-full lg:w-1/2'>
+      <div className='px-[8%] lg:px-[16%] py-20 overflow-hidden'>
+        <motion.div
+          className="flex flex-col lg:flex-row gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
+          <motion.div className='w-full lg:w-1/2' variants={slideLeft}>
             <h2 className='text-4xl text-black GolosText font-bold mb-5'>
               Your Style, Quality, Individuality - Redefining Fashion Together.
             </h2>
@@ -104,9 +112,9 @@ const About = () => {
               into every garment we offer. We believe thar what you wear is an extension of your unique personality,
               and it should reflect your values and aspirations.
             </p>
-          </div>
+          </motion.div>
 
-          <div className='w-full lg:w-1/2'>
+          <motion.div className='w-full lg:w-1/2' variants={slideRight}>
             <div className='about-image flex gap-5 h-[250px]'>
               <Image
                 src={aboutImg1}
@@ -119,12 +127,18 @@ const About = () => {
                 className='rounded-2xl'
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className='flex flex-col-reverse lg:flex-row gap-5 lg:gap-8 py-6'>
+        <motion.div
+          className='flex flex-col-reverse lg:flex-row gap-5 lg:gap-8 py-6'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           {/* img founder + faq */}
-          <div className='w-full lg:w-1/2'>
+          <motion.div className='w-full lg:w-1/2' variants={slideUp}>
             <div className='about-author flex items-center gap-5'>
               <Image
                 src={aboutImg3}
@@ -143,7 +157,10 @@ const About = () => {
 
             <div className="space-y-1 w-full py-10">
               {faqData.map((faq, index) => (
-                <div key={index} className="">
+                <motion.div
+                  key={index}
+                  variants={slideUp}
+                >
                   {/* button = question + icon */}
                   <button
                     onClick={() => toggle(index)}
@@ -167,13 +184,13 @@ const About = () => {
                   >
                     <p className="text-black pb-4 GolosText">{faq.answer}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* img right */}
-          <div className='w-full lg:w-1/2'>
+          <motion.div className='w-full lg:w-1/2' variants={fadeIn}>
             <div className='about-image'>
               <Image
                 src={aboutImg4}
@@ -181,14 +198,20 @@ const About = () => {
                 className='rounded-2xl w-full h-full object-cover'
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Countup */}
-        <div className='flex flex-col lg:flex-row lg:gap-8 py-6'>
+        <motion.div
+          className='flex flex-col lg:flex-row lg:gap-8 py-6'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
           <div className='w-full lg:w-1/2'>
             <div className='about-section flex gap-25'>
-              <div className='about-heading'>
+              <motion.div className='about-heading' variants={slideUp}>
                 <h2 className='GolosText font-bold text-black text-7xl'>
                   <CountUp
                     start={0}
@@ -204,9 +227,9 @@ const About = () => {
                 <span className='text-black text-xl font-semibold'>
                   Items Sale
                 </span>
-              </div>
+              </motion.div>
 
-              <div className='about-heading'>
+              <motion.div className='about-heading' variants={slideUp}>
                 <h2 className='GolosText font-bold text-black text-7xl'>
                   <CountUp
                     start={0}
@@ -222,11 +245,11 @@ const About = () => {
                 <span className='text-black text-xl font-semibold'>
                   Return On Investment
                 </span>
-              </div>
+              </motion.div>
             </div>
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <motion.div className='w-full lg:w-1/2' variants={fadeIn}>
             <div>
               <Image
                 src={aboutImg5}
@@ -234,22 +257,28 @@ const About = () => {
                 className='rounded-2xl'
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* testimonial */}
-      <div className='px-[8%] lg:px-[16%] py-20 pb-20 bg-[#ffedd4]'>
-        <div className='flex flex-col-reverse lg:flex-row items-center gap-8'>
-          <div className='w-full lg:w-1/2 testi-img relative'>
+      <div className='px-[8%] lg:px-[16%] py-20 pb-20 bg-[#ffedd4] overflow-hidden'>
+        <motion.div
+          className='flex flex-col-reverse lg:flex-row items-center gap-8'
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportConfig}
+          variants={staggerContainer}
+        >
+          <motion.div className='w-full lg:w-1/2 testi-img relative' variants={slideLeft}>
             <Image
               src={aboutImg6}
               alt="about"
               className='rounded-2xl w-full h-full object-cover'
             />
-          </div>
+          </motion.div>
 
-          <div className='w-full lg:w-1/2'>
+          <motion.div className='w-full lg:w-1/2' variants={slideRight}>
             <h2 className='GolosText text-3xl md:text-6xl font-bold mb-5'>
               What Our Clients Say About Us
             </h2>
@@ -296,8 +325,8 @@ const About = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <Follow />

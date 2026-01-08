@@ -13,6 +13,8 @@ import gallery4 from "@/public/assets/blog-gallery-4.webp"
 import gallery5 from "@/public/assets/blog-gallery-5.webp"
 import Follow from "../../Index/Follow/page"
 import { ToastContainer } from "react-toastify"
+import { motion } from 'framer-motion'
+import { slideUp, fadeIn, staggerContainer, viewportConfig } from '@/app/lib/animations'
 
 const categories = [
   { name: "Dresses", count: 10 },
@@ -39,7 +41,7 @@ const tags = [
   "Formal",
 ]
 
-const BlodDetails = () => {
+const BlogDetails = () => {
 
   const post = BlogsData.slice(4, 7)
 
@@ -72,11 +74,16 @@ const BlodDetails = () => {
         parentLink="/UI-Components/Blog"
       />
 
-      <div className="px-[8%] lg:px-[16%] py-30 pt-10">
+      <div className="px-[8%] lg:px-[16%] py-30 pt-10 overflow-hidden">
         <div className="flex flex-col lg:flex-row justify-between gap-10">
 
           {/* izquierda */}
-          <div className="w-full lg:w-1/1">
+          <motion.div
+            className="w-full lg:w-1/1"
+            initial="hidden"
+            animate="visible"
+            variants={slideUp}
+          >
             <h2 className="GolosText text-5xl font-semibold">{blog.title}</h2>
 
             <div className="flex items-center gap-2 my-3">
@@ -91,7 +98,7 @@ const BlodDetails = () => {
               </span>
             </div>
 
-            <div>
+            <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={viewportConfig}>
               <Image
                 src={blog.image}
                 alt=""
@@ -99,7 +106,7 @@ const BlodDetails = () => {
                 height={800}
                 className="w-full h-full rounded-2xl mt-5"
               />
-            </div>
+            </motion.div>
 
             <p className="mt-3 GolosText tracking-wider text-lg">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia quibusdam sapiente dolorum ullam dolore. Nihil numquam ad
@@ -107,7 +114,7 @@ const BlodDetails = () => {
               sit amet consectetur adipisicing elit. Quisquam, quod.
             </p>
 
-            <div className="my-5 border rounded-2xl p-5">
+            <motion.div className="my-5 border rounded-2xl p-5" variants={slideUp} initial="hidden" whileInView="visible" viewport={viewportConfig}>
               <h4 className="GolosText text-2xl font-semibold">
                 Information Architecture That's Easy To Use Way Precise Usability Considerantion For Partially
               </h4>
@@ -121,10 +128,10 @@ const BlodDetails = () => {
                   alt="quote"
                   width={80}
                   height={80}
-                  className="rounded-2xl flex-shrink-0 self-end sm:self-center"
+                  className="rounded-2xl shrink-0 self-end sm:self-center"
                 />
               </div>
-            </div>
+            </motion.div>
 
             <p className="my-8 GolosText tracking-wide text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -133,33 +140,41 @@ const BlodDetails = () => {
               veritatis quaerat eaque, necessitatibus tenetur molestias doloremque aliquid rerum unde, autem neque sapiente aperiam sequi molestiae. Suscipit, porro!
             </p>
 
-            <div className="flex flex-col gap-5 mt-5">
+            <motion.div
+              className="flex flex-col gap-5 mt-5"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              variants={staggerContainer}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {galleryImages.slice(0, 2).map((item) => (
-                  <Image
-                    key={item.id}
-                    src={item.img}
-                    alt="gallery"
-                    width={800}
-                    height={800}
-                    className="w-full h-full rounded-2xl"
-                  />
+                  <motion.div key={item.id} variants={fadeIn}>
+                    <Image
+                      src={item.img}
+                      alt="gallery"
+                      width={800}
+                      height={800}
+                      className="w-full h-full rounded-2xl"
+                    />
+                  </motion.div>
                 ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                 {galleryImages.slice(3, 5).map((item) => (
-                  <Image
-                    key={item.id}
-                    src={item.img}
-                    alt="gallery"
-                    width={800}
-                    height={800}
-                    className="w-full h-full rounded-2xl"
-                  />
+                  <motion.div key={item.id} variants={fadeIn}>
+                    <Image
+                      src={item.img}
+                      alt="gallery"
+                      width={800}
+                      height={800}
+                      className="w-full h-full rounded-2xl"
+                    />
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             <p className="my-8 GolosText tracking-wide text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -184,10 +199,16 @@ const BlodDetails = () => {
               recusandae alias voluptas deleniti iste!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eius, maxime expedita
             </p>
 
-          </div>
+          </motion.div>
 
           {/* derecha */}
-          <div className='w-full lg:w-1/2 sticky top-25 left-0 h-full'>
+          <motion.div
+            className='w-full lg:w-1/2 sticky top-25 left-0 h-full'
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportConfig}
+            variants={slideUp}
+          >
             <h2 className='lufga text-2xl font-medium'>
               Category
             </h2>
@@ -213,7 +234,7 @@ const BlodDetails = () => {
 
               <div className='flex flex-col gap-6'>
                 {post.map((post, index) => (
-                  <Link href={`/UI-Components/Blogs/${post.id}`} key={index} className='flex items-center gap-5 cursor-pointer'>
+                  <Link href={`/UI-Components/Blog/${post.id}`} key={index} className='flex items-center gap-5 cursor-pointer'>
                     <div className='w-1/3 rounded-xl overflow-hidden'>
                       <Image
                         src={post.image}
@@ -251,7 +272,7 @@ const BlodDetails = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -263,4 +284,4 @@ const BlodDetails = () => {
   )
 }
 
-export default BlodDetails
+export default BlogDetails

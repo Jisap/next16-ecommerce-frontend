@@ -1,4 +1,7 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { slideUp, fadeIn } from "@/app/lib/animations";
 
 interface PageHeaderProps {
   title: string;
@@ -16,10 +19,18 @@ const PageHeader = ({ title, currentPage, parentPage, parentLink }: PageHeaderPr
       }}
     >
       <div className="absolute top-0 left-0 -z-10 h-full w-full bg-black/40" />
-      <div className="z-10 flex flex-col items-center justify-center text-center">
+      <motion.div
+        className="z-10 flex flex-col items-center justify-center text-center"
+        initial="hidden"
+        animate="visible"
+        variants={slideUp}
+      >
         <h2 className="GolosText text-8xl font-semibold text-white">{title}</h2>
 
-        <div className="mt-5 flex items-center text-2xl text-white">
+        <motion.div
+          className="mt-5 flex items-center text-2xl text-white"
+          variants={fadeIn}
+        >
           <Link href="/" className="hover:text-primary">
             Home
           </Link>
@@ -33,8 +44,8 @@ const PageHeader = ({ title, currentPage, parentPage, parentLink }: PageHeaderPr
           )}
           <i className="ri-arrow-right-wide-line px-2 pt-2"></i>
           <span className="">{currentPage}</span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

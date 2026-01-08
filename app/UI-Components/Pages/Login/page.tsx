@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import loginImg from '@/public/assets/login-img.webp'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { slideLeft, slideRight, viewportConfig } from '@/app/lib/animations'
 
 const Login = () => {
 
@@ -11,10 +13,15 @@ const Login = () => {
 
   return (
     <>
-      <div>
+      <div className='overflow-hidden'>
         <div className='flex flex-col lg:flex-row'>
           {/* izquierda */}
-          <div className='w-full lg:w-1/2 hidden lg:block bg-[#ffedd4]'>
+          <motion.div
+            className='w-full lg:w-1/2 hidden lg:block bg-[#ffedd4] relative'
+            initial="hidden"
+            animate="visible"
+            variants={slideLeft}
+          >
             <div className='absolute top-20 lg:top-40 left-10 z-10'>
               <h2 className='text-black text-4xl GolosText font-semibold'>
                 Login
@@ -38,10 +45,15 @@ const Login = () => {
                 className='w-full h-full rounded-2xl'
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* derecha */}
-          <div className='w-full lg:w-1/2'>
+          <motion.div
+            className='w-full lg:w-1/2'
+            initial="hidden"
+            animate="visible"
+            variants={slideRight}
+          >
             <div className='flex items-center justify-center px-[8%] lg:px-[16%] py-15 min-h-screen'>
               <div className='border w-[90%] max-w-xl p-10 border-black rounded-2xl'>
                 <h2 className='text-3xl Lufga font-bold text-center mb-3'>
@@ -96,7 +108,7 @@ const Login = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
